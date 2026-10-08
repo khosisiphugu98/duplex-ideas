@@ -153,3 +153,8 @@ body[data-look="now"] .seg [data-look-btn="now"] { background: #6b6259; color: #
 #photoStatus[hidden] { display: none; }
 body.photo-on #photoBtn { background: var(--ink); color: var(--paper); }
 body.shot #photoStatus { display: none !important; }
+
+/* streaming badge (house is visible, details still loading) */
+#loadBadge { display: none; position: absolute; left: 16px; top: 16px; background: rgba(38, 34, 30, 0.75); color: #fff; padding: 6px 12px; border-radius: 999px; font-size: 12px; font-variant-numeric: tabular-nums; pointer-events: none; }
+body.streaming #loadBadge { display: block; }
+body.shot #loadBadge { display: none !important; }
