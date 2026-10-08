@@ -39,7 +39,7 @@ window.HOUSE = {
       gem: "When you open the door, you look straight down the unit to the balcony slider, with the staircase on your right and the kitchen on your left.",
       ideas: [
         "<b>A slim shoe cabinet, just 25 cm deep,</b> on the east wall, with a round mirror above and three hooks. It stops short of the door so the door can still open fully against that wall.",
-        "<b>Fridge option:</b> a fridge can stand against the wall beside the kitchen, facing the hall (see the kitchen card), and the hall stays more than 1.2 m wide.",
+        "<b>Backup fridge spot:</b> if the fridge doesn't fit under the geyser box, a full-height one can stand against the wall beside the kitchen, facing the hall. The hall stays more than 1.2 m wide (see the kitchen card).",
       ],
       fit: ["Hall walkway past the shoe cabinet: about 1.1 m", "Front door opens fully (it swings towards the east wall)"],
       cam: { pos: [6.25, 1.6, 8.35], look: [4.8, 1.2, 2.6] },
