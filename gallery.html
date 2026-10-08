@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your duplex — today &amp; with the ideas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,560&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root { --paper: #f4efe6; --ink: #26221e; --ink-2: #5d554c; --clay: #8f4a2f; --olive: #6e7449; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font: 15px/1.55 "Inter", system-ui, sans-serif; }
+    header, section { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+    header { padding-top: 48px; padding-bottom: 8px; }
+    .kicker { font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--clay); font-weight: 600; margin: 0; }
+    h1 { font: 560 44px/1.05 "Fraunces", Georgia, serif; margin: 6px 0 10px; }
+    header p { max-width: 680px; color: var(--ink-2); }
+    section { padding-top: 40px; padding-bottom: 8px; border-top: 1px solid rgba(38,34,30,.12); margin-top: 36px; }
+    h2 { font: 560 28px/1.1 "Fraunces", Georgia, serif; margin: 0; }
+    .area { color: var(--clay); font-size: 13px; font-weight: 500; }
+    .pair { display: grid; grid-template-columns: 1fr 1.6fr; gap: 12px; margin: 16px 0; }
+    figure { margin: 0; position: relative; }
+    figure img { width: 100%; height: 100%; object-fit: cover; border-radius: 8px; display: block; aspect-ratio: 16 / 10; }
+    figcaption { position: absolute; left: 10px; top: 10px; background: rgba(38,34,30,.75); color: #fff; font-size: 11.5px; padding: 3px 10px; border-radius: 999px; }
+    .gem { font: 400 17px/1.45 "Fraunces", Georgia, serif; margin: 0 0 10px; max-width: 760px; }
+    ol { margin: 0; padding-left: 20px; color: var(--ink-2); max-width: 760px; display: grid; gap: 6px; }
+    ol b { color: var(--ink); }
+    details { margin: 0 0 14px; } summary { cursor: pointer; color: var(--clay); font-weight: 600; font-size: 13px; }
+    .t3 { margin-top: 10px; max-width: 760px; }
+    .fit { max-width: 760px; font-size: 13px; color: var(--ink-2); background: #ebe3d6; padding: 8px 12px; border-radius: 8px; margin-top: 12px; }
+    .extra { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 12px; margin-top: 16px; }
+    footer { max-width: 1180px; margin: 48px auto; padding: 0 24px; color: var(--ink-2); font-size: 13px; }
+    @media (max-width: 720px) { .pair { grid-template-columns: 1fr; } h1 { font-size: 34px; } }
+  </style>
+</head>
+<body>
+  <header>
+    <p class="kicker">Upper-floor duplex</p>
+    <h1>Your duplex: today &amp; with the ideas</h1>
+    <p id="intro"></p>
+    <p>Still pictures of every room. Today's photo is on the left and the 3D concept, from about the same spot, is on the right. To walk around in 3D, double-click <b>Open Walkthrough.command</b> in this folder.</p>
+  </header>
+  <main id="list"></main>
+  <section>
+    <h2>Evening &amp; the whole home</h2>
+    <div class="extra">
+      <figure><img src="renders/photo/02-lounge-today.jpg" alt="Lounge as it is today, photo-quality render" loading="lazy"><figcaption>Lounge as it is · high quality</figcaption></figure>
+      <figure><img src="renders/15-dollhouse.jpg" alt="Dollhouse view of the whole duplex" loading="lazy"><figcaption>Dollhouse</figcaption></figure>
+      <figure><img src="renders/16-dollhouse-main-level.jpg" alt="Main level seen from above" loading="lazy"><figcaption>Main level from above</figcaption></figure>
+    </div>
+  </section>
+  <footer id="notes"></footer>
+  <script src="data.js"></script>
+  <script>
+    const D = window.HOUSE;
+    const files = { entry: "01-front-door", lounge: "02-lounge", stair: "03-tv-under-stair", kitchen: "04-kitchen", braai: "05-balcony", bath: "06-bathroom", bed1: "07-main-bedroom", bed2: "08-guest-bedroom", loft: "09-loft", terrace: "10-terrace-covered-dining", braaiup: "11-terrace-braai", garden: "12-terrace-lounge" };
+    const today3d = { entry: 1, lounge: 1, kitchen: 1, braai: 1 };
+    const photos = { lounge: 1, kitchen: "04-kitchen-today", braai: "05-balcony-today", bed2: 1, terrace: 1 };
+    document.getElementById("intro").textContent = D.intro;
+    document.getElementById("list").innerHTML = D.stops.map((s) => `
+      <section>
+        <h2>${s.name}</h2><div class="area">${s.area}</div>
+        <div class="pair">
+          <figure><img src="${s.photos[0]}" alt="${s.name} today (photo)" loading="lazy"><figcaption>Today · photo</figcaption></figure>
+          <figure><img src="renders/${files[s.id]}.jpg" alt="${s.name} with the ideas (3D)" loading="lazy"><figcaption>With the ideas · 3D</figcaption></figure>
+        </div>
+        ${photos[s.id] ? `<details open><summary>Higher-quality render (pre-made, more realistic lighting)</summary><figure class="t3"><img src="renders/photo/${photos[s.id] === 1 ? files[s.id] : photos[s.id]}.jpg" alt="${s.name}, photo-quality render" loading="lazy"><figcaption>${photos[s.id] === 1 ? "With the ideas" : "As it is"} · high quality</figcaption></figure></details>` : ""}
+        ${today3d[s.id] ? `<details><summary>See this room as it is today, in 3D</summary><figure class="t3"><img src="renders/${files[s.id]}-today.jpg" alt="${s.name} as it is today (3D)" loading="lazy"><figcaption>As it is · 3D</figcaption></figure></details>` : ""}
+        <p class="gem">${s.gem}</p>
+        <ol>${s.ideas.map((i) => `<li>${i}</li>`).join("")}</ol>
+        ${s.fit ? `<p class="fit"><b>Measured:</b> ${s.fit.join(" · ")}</p>` : ""}
+      </section>`).join("");
+    document.getElementById("notes").innerHTML = "<b>Good to know</b><ul>" + D.notes.map((n) => `<li>${n}</li>`).join("") + "</ul><p>3D assets: CC0 scans from Poly Haven and ambientCG (see assets/ASSETS.md).</p>";
+  </script>
+</body>
+</html>
