@@ -2,6 +2,210 @@
 // cam.pos / cam.look are in metres on the floor-plan grid (x → east, z → south, y up; the loft
 // and roof terrace are at y = 2.8). Every cam.pos is a walkable spot — the tour walks you there.
 // "fit" = measured clearances in the 3D model (sizes re-measured from the floor plan, ±15 cm).
+// Stops that only exist in some plans (see `plans` at the bottom). Same format as `stops`.
+const LOFT_PHOTOS = ["photos/video-loft.jpg", "listing/13442259.jpg"];
+const ALT = {
+  loftSuite: {
+    id: "loft", name: "Loft suite (your bedroom)", area: "3.9 × 4.15 m · 3.5 m to the ridge · faces the big north window", level: 1,
+    photos: LOFT_PHOTOS,
+    gem: "You sleep under the rafters with nothing between you and the big raked window across the void. The roof is yours in this plan, so nobody walks through, and there's no curtain.",
+    ideas: [
+      "<b>A queen bed centred under the veld window</b>, head against the gable wall, facing north across the void to the big window. A low 90 cm headboard stays under the 95 cm sill.",
+      "<b>Take out the U-desk</b> (just oak tops on brackets, so no builder needed). Your 3-screen desk lives downstairs, so work stays off the bedroom floor.",
+      "<b>A 1.5 m wardrobe on the west wall</b>: 50 cm deep and 2 m tall, which clears the rafters at the eave.",
+      "<b>Bedside tables, swing-arm wall lights, a big berber rug</b>, and a blackout roller on the veld window behind you. The big window stays bare for the night sky.",
+      "<b>Warm LED strips under the stair treads</b> for night trips to the bathroom downstairs.",
+      "<b>Heat:</b> it's right under the roof. Keep the ceiling fan and think about a split aircon.",
+    ],
+    fit: ["Stair side of the bed: about 1 m", "Wardrobe side: about 66 cm (doors open fully)", "Foot of the bed to the railing: about 1.9 m", "Bed to the big window: about 8 m across the void"],
+    cam: { pos: [6.55, 4.4, 8.55], look: [4.5, 3.3, 10.3] },
+  },
+  moonView: {
+    id: "loft-view", name: "Loft suite: the view from bed", area: "big raked window · about 2.4 m wide, up to 2.3 m tall", level: 1,
+    photos: ["listing/13442258.jpg", "photos/video-loft.jpg"],
+    gem: "This is the view you'd fall asleep to: across the void, through the raked window, out to the night sky. It faces north, the side of the sky the moon crosses.",
+    ideas: [
+      "<b>To be realistic about the moon:</b> from the pillow, the window frames a slice of sky about 17° wide and 3–15° above the horizon. You'll see the moon in it when it's low (rising, setting, or on its low nights). When it's high, you get the moonlight rather than the moon.",
+      "<b>Want the moon overhead too?</b> Add a roof window in the slope above the bed (about 78 × 98 cm, with a blackout blind). That's a roof change, so it needs body-corporate approval and a roofer.",
+      "<b>Keep the lounge dark at night:</b> its lights shine straight up into the loft. Put the lamps on smart plugs and switch them off from bed.",
+      "<b>Leave the big window bare.</b> It's high above the lounge.",
+    ],
+    fit: ["Window: about 2.4 m wide, 0.55–2.85 m above the loft floor", "Sky from the pillow: about 3–15° above the horizon, about 17° wide (neighbouring roofs may hide the lowest part)"],
+    cam: { pos: [6.45, 4.4, 9.7], look: [5.05, 4.75, 2.0] },
+  },
+  study: {
+    id: "bed1", name: "Study (was the main bedroom)", area: "2.9 × 4.1 m in front of the cupboards · pool-garden view", level: 0,
+    photos: ["photos/video-bedroom-pool-view.jpg", "listing/13442265.jpg"],
+    gem: "Your workspace gets a door that closes for calls and the pool garden beside you. A sleeper couch means you still have three places to sleep.",
+    ideas: [
+      "<b>A 2 × 0.8 m desk on the east wall with three 27\" screens on a triple monitor arm.</b> The window is beside you, not behind the screens, so there's no glare. The 80 cm depth keeps the screens a comfortable 70–80 cm from your eyes.",
+      "<b>Spend on the chair.</b> It's the piece you'll use 8 hours a day.",
+      "<b>A 1.8 m sleeper couch on the clay wall</b> that opens to a double for overflow guests, with a floating shelf above and a floor lamp for reading.",
+      "<b>A linen roller blind</b> instead of curtains, so it clears the desk. Pull it halfway down on bright afternoons.",
+      "<b>The built-in cupboards</b> take overflow from the loft wardrobe, plus files and tech.",
+    ],
+    fit: ["Desk: 2.0 × 0.8 m; the screens span about 1.7 m", "Behind the chair to the couch: about 50 cm", "Couch to the cupboard doors: about 64 cm (doors open fully)"],
+    cam: { pos: [1.5, 1.6, 3.85], look: [2.6, 1.05, 0.9] },
+  },
+  officeDressing: {
+    id: "bed1", name: "Office + dressing room (was the main bedroom)", area: "2.9 × 4.1 m in front of the cupboards · pool-garden view", level: 0,
+    photos: ["photos/video-bedroom-pool-view.jpg", "listing/13442265.jpg"],
+    gem: "You sleep upstairs, so the old main bedroom becomes your workday room and your wardrobe. It has three screens, a door that closes, the built-ins for clothes, and a reading chair by the pool-view window.",
+    ideas: [
+      "<b>The same 2 × 0.8 m desk and triple screen arm</b> as the study, on the east wall with the window beside you.",
+      "<b>The built-in cupboards are your wardrobe</b>, so the loft stays calm and clutter-free. Add a full-length mirror on the clay wall and a bench to sit on.",
+      "<b>A mid-century lounge chair by the window</b> with an arc floor lamp over it, for reading breaks with the pool view.",
+      "<b>A linen roller blind</b>, so it clears the desk.",
+    ],
+    fit: ["Desk: 2.0 × 0.8 m, with the window to your left", "Behind the chair to the bench: about 1 m", "Cupboard doors open fully"],
+    cam: { pos: [1.5, 1.6, 3.85], look: [2.2, 1.0, 0.5] },
+  },
+  officeGuest: {
+    id: "bed2", name: "Office (was the guest room)", area: "2.9 × 3.4 m · veld view · door closes for calls", level: 0,
+    photos: ["listing/13442263.jpg", "listing/13442264.jpg"],
+    gem: "A proper home office with a door. Guests sleep on the lounge bed in the loft now, so this room can be set up for work full-time.",
+    ideas: [
+      "<b>A 1.8 × 0.8 m desk on the sage wall with three 27\" screens on a triple arm.</b> The veld window is to your left, so there's no glare.",
+      "<b>Floor-to-ceiling bookshelves behind you</b> (1.6 m × 32 cm), clear of the door. They also make a good backdrop for video calls.",
+      "<b>The built-in cupboards</b> become the tech cupboard: printer, cables and files.",
+      "<b>A linen roller blind</b> and a big plant in the corner.",
+    ],
+    fit: ["Desk to the cupboard doors: about 64 cm (doors open fully)", "Behind the chair to the bookshelves: about 1.1 m", "The door swings clear of the shelves"],
+    cam: { pos: [2.3, 1.6, 8.5], look: [0.5, 1.05, 9.9] },
+  },
+  dining: {
+    id: "lounge", name: "Dining room (double-height)", area: "2.8 m wide · about 5 m to the ridge", level: 0,
+    photos: ["listing/13442271.jpg", "listing/13442267.jpg"],
+    gem: "With the couch and TV moved up to the loft, the double-height room becomes a dining room: dinner under a 5 m ceiling, between the kitchen and the balcony.",
+    ideas: [
+      "<b>A 1.8 m table that seats six:</b> three on a cushioned bench along the west wall and three chairs on the stair side. With the bench, nobody pulls out against the wall, and no chair at the far end, because that's the way through to the bedrooms.",
+      "<b>A big rattan pendant hung low</b>, about 1 m above the table, so the tall room still feels intimate at night.",
+      "<b>A sideboard under the stair</b> where the TV would have gone, for crockery and drinks, with a lamp on top.",
+      "<b>Keep the reading chair and floor lamp by the slider</b>, and the art above the bench.",
+    ],
+    fit: ["Behind the stair-side chairs: about 1 m (the walkway along the stair stays)", "Between the table end and the bar stools: about 85 cm, the way to the bedrooms", "Table: 1.8 × 0.85 m · seats 6", "Pendant: about 1 m above the table"],
+    cam: { pos: [5.7, 1.65, 2.4], look: [4.3, 0.85, 5.6] },
+  },
+  stairDining: {
+    id: "stair", name: "The staircase (sideboard wall)", area: "about 4 m long · rises from beside the slider", level: 0,
+    photos: ["photos/video-stair.jpg", "listing/13442270.jpg"],
+    gem: "The low cabinet stays under the stair, and a 1.4 m sideboard takes the TV's spot. It's a serving surface right beside the table.",
+    ideas: [
+      "<b>Under the stair, from low to high:</b> the 46 cm oak cabinet, then a 74 cm-high sideboard, then the tall plant.",
+      "<b>A lamp at the sideboard's tall end</b>, where there's the most headroom.",
+      "<b>Later, oak tread caps</b> over the chequer plate, as in Plan A.",
+    ],
+    fit: ["Sideboard: 1.4 × 0.44 m, 74 cm high", "Clearance under the stair at its low end: about 35 cm"],
+    cam: { pos: [4.3, 1.55, 5.65], look: [6.6, 1.0, 4.3] },
+  },
+  loftDen: {
+    id: "loft", name: "Loft living room (the den)", area: "3.9 × 4.15 m · your one couch and one TV", level: 1,
+    photos: LOFT_PHOTOS,
+    gem: "The den becomes the only living room in the flat, which fixes both problems: one couch and one TV, and the walk to the roof is just people passing through the lounge. The lounge bed is also the guest bed.",
+    ideas: [
+      "<b>The lounge bed is your one couch:</b> a queen mattress on a low oak platform with big cushions against the wall. Guests sleep here, so the guest room can be your office.",
+      "<b>The one TV (65\")</b> on an oak-slat wall opposite, about 3 m from the cushions. The slats also soften the echo of the high ceiling.",
+      "<b>A bar cabinet under the window</b> with a bar fridge inside and the record player on top.",
+      "<b>Deep olive behind the lounge bed</b>, warm wall lights, and the terrace door right there for drinks outside.",
+      "<b>Downstairs gets a dining room</b> instead (see the lounge stop), and the guest room becomes your office.",
+    ],
+    fit: ["Route from the stair to the terrace door: about 1.9 m wide, clear", "Lounge bed to coffee table: about 43 cm", "Coffee table to console: about 46 cm, to the bar: about 52 cm", "Cushions to the TV: about 3 m"],
+    cam: { pos: [5.0, 4.4, 7.35], look: [5.1, 3.3, 10.4] },
+  },
+  skyNet: {
+    id: "loft-net", name: "Sky net over the lounge", area: "about 2.7 × 4.3 m · at loft-floor level", level: 1,
+    photos: ["listing/13442271.jpg", "photos/video-loft.jpg"],
+    gem: "The boldest idea here: a walk-on loft net over the double-height lounge. Lie on it and the big raked window is right in front of you. It's the best moon-watching spot in the flat, and it's see-through, so light still reaches the lounge.",
+    ideas: [
+      "<b>A double-layer loft net</b> (the kind rated for people, not decoration) on a steel frame bolted to the walls at loft-floor level. You step onto it through a gate in the railing.",
+      "<b>It needs an engineer.</b> The frame and anchors hold people over a 2.8 m drop, so a structural engineer must sign off the fixings, and a specialist installer fits it.",
+      "<b>The lounge pendant goes</b>, because the net is where it hung. Light the lounge with lamps and an uplight instead.",
+      "<b>Floor cushions and a throw</b> on the net turn it into a stargazing deck.",
+      "<b>Not for you?</b> It's the easiest part of this plan to drop. Everything else works without it.",
+    ],
+    fit: ["Net: about 2.7 × 4.3 m", "Lounge headroom under it: 2.8 m", "Lying on it, the big window is 0–2 m in front of you"],
+    cam: { pos: [4.6, 4.4, 6.9], look: [4.7, 3.6, 2.0] },
+  },
+  privateCovered: {
+    id: "terrace", name: "Roof terrace: daybed under the cover", area: "covered middle · about 2.9 × 4.6 m", level: 1,
+    photos: ["photos/video-terrace.jpg", "listing/13442256.jpg"],
+    gem: "If the roof is only yours, it stops being a party deck and becomes an outdoor room off your bedroom: somewhere to read, nap, and sleep out on hot nights.",
+    ideas: [
+      "<b>An outdoor daybed (1.4 × 2.0 m)</b> against the parapet under the pergola, with quick-dry cushions. It's a sleep-out on hot summer nights.",
+      "<b>Keep the pergola from Plan A.</b> The rain cover is what makes the daybed usable all year (body-corporate approval needed).",
+      "<b>A side table</b>, and a lavender trough along the wall by your door.",
+      "<b>Optional:</b> outdoor curtains clipped to the pergola for shade or privacy from the neighbours.",
+    ],
+    fit: ["Walkway beside the daybed: about 1.5 m (1.05 m at the side table)", "Loft door landing kept clear: 90 cm × 1.6 m"],
+    cam: { pos: [2.55, 4.45, 7.7], look: [0.6, 3.3, 3.8] },
+  },
+  cinema: {
+    id: "terrace", name: "Roof terrace: daybed cinema", area: "covered middle · about 2.9 × 4.6 m", level: 1,
+    photos: ["photos/video-terrace.jpg", "listing/13442256.jpg"],
+    gem: "The private daybed, plus a roll-down outdoor screen on the loft's outside wall. Movies under the pergola, and it still works as a sleep-out.",
+    ideas: [
+      "<b>A 1.5 m roll-down outdoor screen</b> (about 70\") on the loft wall, facing the daybed. It fits between the pergola post and the downpipe, and rolls up into a slim box when you're not using it.",
+      "<b>A compact projector</b> on the side table and a weatherproof speaker. Everything comes inside afterwards. You'll need an outdoor plug point (an electrician job).",
+      "<b>The daybed (1.4 × 2.0 m)</b> against the parapet, with quick-dry cushions. The pergola keeps the dew and drizzle off.",
+      "<b>Movies start after sunset:</b> projectors only really work in the dark.",
+    ],
+    fit: ["Your eyes to the screen: about 2.3 m", "Screen: about 1.5 × 0.85 m (70\")", "Walkway beside the daybed: about 1.5 m"],
+    cam: { pos: [1.5, 4.45, 7.9], look: [1.9, 3.4, 3.6] },
+  },
+  privateGarden: {
+    id: "braaiup", name: "Roof terrace: garden end", area: "veld end · about 2.9 × 2.2 m", level: 1,
+    photos: ["listing/13442256.jpg"],
+    gem: "The veld end becomes a small garden: something to grow, and a seat to watch the sunset from.",
+    ideas: [
+      "<b>Two raised planters (1.2 m × 55 cm, 70 cm high)</b> for herbs and vegetables, along the end wall, so there's no bending. Self-watering ones are lighter and easier.",
+      "<b>A hanging egg chair on its own stand</b>, so nothing is fixed to the building.",
+      "<b>An outdoor rug</b> for stretching or yoga, and the spekboom from Plan A.",
+      "<b>Hot tub? Only after an engineer says yes.</b> A three-seater full of water and people is about 360 kg per m², close to the roughly 400 kg/m² a balcony is typically designed for. It needs a structural engineer and the body corporate first.",
+    ],
+    fit: ["Path between the spekboom and the egg chair: about 1.1 m", "Egg chair stand: about 1 m across"],
+    cam: { pos: [2.4, 4.45, 7.85], look: [1.2, 3.35, 10.7] },
+  },
+  privateSun: {
+    id: "garden", name: "Roof terrace: sun deck", area: "pool-garden end · about 2.9 × 3.6 m", level: 1,
+    photos: ["photos/video-terrace.jpg"],
+    gem: "Two sun loungers at the pool end. It's the sunniest, most private spot in the unit, and it's all yours.",
+    ideas: [
+      "<b>Two teak sun loungers (65 × 195 cm)</b> with quick-dry cushions and a small side table. The feet stop short of the deck box, so its lid still opens.",
+      "<b>A cantilever parasol</b> on a weighted base (no fixings) for the middle of the day.",
+      "<b>The olive tree and deck box stay</b> from Plan A.",
+      "<b>Dream add-on: an outdoor shower</b> against the parapet. It needs a plumber and body-corporate approval, so price it before you fall in love with it.",
+    ],
+    fit: ["Walkway beside the loungers: about 1.15 m (75 cm at the side table)", "Loungers to the deck box: about 18 cm (the lid lifts clear)"],
+    cam: { pos: [2.5, 4.45, 4.4], look: [0.8, 3.3, 0.6] },
+  },
+  balconyBraai: {
+    id: "braai", name: "Balcony (braai kept)", area: "3.9 × 1.9 m · built-in braai · over the pool garden", level: 0,
+    photos: ["photos/video-balcony.jpg", "listing/13442273.jpg"],
+    gem: "With the roof private, entertaining comes downstairs to the lounge and this balcony. So the built-in braai stays a braai, and there's no kettle braai to buy.",
+    ideas: [
+      "<b>Bring the built-in braai back to life:</b> clean it, fit a new grid, keep wood in the store underneath, and hang the tongs on a rail on the side wall.",
+      "<b>The downside:</b> smoke can drift into the lounge through the slider, which is why Plan A moved braaiing to the roof. Close the slider while the fire's going.",
+      "<b>The ledge and stools stay:</b> people stand with a drink and the pool view while you braai.",
+      "<b>The drying rack, olive tree and string lights</b> stay as in Plan A.",
+    ],
+    fit: ["The slider's opening half: about 80 cm, kept clear", "Nearest stool to the braai's side wall: about 60 cm"],
+    cam: { pos: [4.55, 1.6, 1.65], look: [6.3, 1.0, 0.2] },
+  },
+  balconyPizza: {
+    id: "braai", name: "Balcony: pizza bar + living wall", area: "3.9 × 1.9 m · over the pool garden", level: 0,
+    photos: ["photos/video-balcony.jpg", "listing/13442273.jpg"],
+    gem: "The old braai counter gets a second life: a gas pizza oven on a hardwood top. Pizza in 90 seconds, with no smoke and no wood. Above the olive, the tall party wall becomes a living wall.",
+    ideas: [
+      "<b>A gas pizza oven</b> on a hardwood top over the old fire bed, with the gas bottle hidden in the old wood store underneath. Check the body-corporate rules on gas on balconies.",
+      "<b>A living wall</b> of herbs and trailing plants up the tall wall: three planter rows, with drip irrigation on a timer.",
+      "<b>The ledge and two stools</b> along the pool-side wall stay, as the pizza bar.",
+      "<b>The drying rack, olive tree and string lights</b> stay from Plan A.",
+    ],
+    fit: ["Hardwood top: about 70 × 65 cm, which fits a 12\" oven", "The slider's opening half: about 80 cm, kept clear", "Living wall: about 1.2 × 1.0 m, from 1.65 m up"],
+    cam: { pos: [4.55, 1.6, 1.65], look: [6.4, 1.4, 0.6] },
+  },
+};
+
 window.HOUSE = {
   title: "Your duplex",
   subtitle: "Ideas for your duplex",
@@ -25,6 +229,7 @@ window.HOUSE = {
   ],
 
   notes: [
+    "<b>Every plan has a real workspace</b> for at least three 27\" screens: a desk at least 1.8 m wide and 72–80 cm deep, on a triple monitor arm, and at right angles to a window so there's no glare.",
     "Room sizes come from the listing floor plan (checked against its scale bar) and your video, so they're accurate to about ±15 cm. Measure before you buy anything big.",
     "Comfort rules used throughout: main walkways at least 90 cm, other walkways at least 70 cm, at least 60 cm beside beds and in front of cupboards, 40–45 cm between a sofa and its table, and at least 75 cm behind dining chairs.",
     "Sectional title: the terrace roof (pergola), anything fixed to exterior walls, and using a braai on the terrace all need body-corporate approval. Ask before you buy.",
@@ -140,13 +345,13 @@ window.HOUSE = {
       photos: ["photos/video-loft.jpg", "listing/13442259.jpg"],
       gem: "The built-in U-desk takes three walls, which makes this a real office for two, with a door straight out to the terrace.",
       ideas: [
-        "<b>Two workstations:</b> one at the window facing the veld, and one on the west run.",
+        "<b>Your main workstation on the east run:</b> a deeper 72 cm oak top laid over it, with three 27\" screens on a triple monitor arm. The window is to your side, so no glare. <b>A second seat on the west run</b> for a visitor or a laptop day.",
         "<b>Keep the band between the stair, the railing and the terrace door clear.</b> It's the route to the terrace and to the braai.",
         "<b>Swap the aluminium venetian for a linen roller blind</b>, and put plants and books on the existing shelves.",
         "When you have extra guests, the clear floor (about 2.7 × 1.8 m inside the U) fits an inflatable mattress.",
       ],
-      fit: ["Route from the stair to the terrace door: 1.5 m or more", "Inside the U-desk: about 2.7 × 1.85 m"],
-      cam: { pos: [6.45, 4.4, 7.05], look: [3.4, 3.4, 9.6] },
+      fit: ["Route from the stair to the terrace door: 1.5 m or more (the deeper desk top stays clear of it)", "Main desk: 1.9 × 0.72 m; the screens span about 1.7 m", "Inside the U-desk: about 2.7 × 1.85 m"],
+      cam: { pos: [4.4, 4.4, 7.2], look: [6.6, 3.7, 9.3] },
     },
     {
       id: "terrace", name: "Roof terrace: covered dining", area: "about 2.9 × 10.7 m overall · covered middle 2.9 × 4.6 m", level: 1,
@@ -187,4 +392,55 @@ window.HOUSE = {
       cam: { pos: [2.5, 4.45, 4.4], look: [0.8, 3.3, 0.6] },
     },
   ],
+  // Whole-home plans to flip between. `rooms` picks a version of each room that differs between
+  // plans (the 3D pieces live in src/furnish.js → variant("room:option")); `replace` swaps tour
+  // stops by id; `labels` renames dollhouse labels; `work` says where the 3-screen workspace is.
+  // To save a new idea, add a plan here. Ground rules from you: always a workspace for 3+ screens,
+  // only one couch and one TV, no curtain dividers.
+  plans: [
+    {
+      id: "a", letter: "A", name: "Loft office", tag: "What we built first",
+      rooms: { loft: "office", bedA: "bedroom", bedB: "guest", lounge: "tv", void: "pendant", terrace: "social", balcony: "counter" },
+      work: "In the loft: three screens on a deeper east run of the U-desk, with the window to your side. A second desk on the west run.",
+      pitch: "You sleep downstairs and work in the loft. The roof is the party deck, with covered dining and the braai.",
+      pros: ["Two real bedrooms, next to the bathroom", "The loft's built-in U-desk gets used, so a 3-screen office costs little", "The roof works for guests and keeps braai smoke out of the lounge"],
+      cons: ["The biggest room in the unit is an office you only use in the daytime", "Guests walk through your workspace to reach the roof"],
+    },
+    {
+      id: "d", letter: "B", name: "Private rooftop", tag: "Sleep under the rafters, roof all yours",
+      rooms: { loft: "suite", bedA: "study", bedB: "guest", lounge: "tv", void: "pendant", terrace: "private", balcony: "braai" },
+      replace: { loft: [ALT.loftSuite, ALT.moonView], bed1: ALT.study, braai: ALT.balconyBraai, terrace: ALT.privateCovered, braaiup: ALT.privateGarden, garden: ALT.privateSun },
+      labels: { loft: "Loft suite", bedA: "Study", tLounge: "Sun deck", tMid: "Daybed", tEnd: "Garden", balcony: "Balcony braai" },
+      work: "A study downstairs (the old main bedroom): a 2 m desk with three screens, a door that closes, and the window to your side.",
+      pitch: "You sleep in the loft facing the big north window (no curtain), and the roof is yours: sun deck, daybed and garden. You work in a study downstairs, and entertaining moves to the lounge and the balcony braai.",
+      pros: ["A true private suite: your bedroom with its own roof terrace", "Nobody walks through your bedroom, ever", "Work and sleep are on different floors, so the workday really ends", "The balcony braai you already have gets used"],
+      cons: ["Entertaining shrinks to the lounge and the 3.9 × 1.9 m balcony", "Braai smoke is closer to the lounge", "The bathroom is a floor down, and it's hotter under the roof", "Guests lose the best space in the unit"],
+    },
+    {
+      id: "c", letter: "C", name: "Living upstairs", tag: "The den, with one couch and one TV",
+      rooms: { loft: "den", bedA: "bedroom", bedB: "office", lounge: "dining", terrace: "social", balcony: "counter" },
+      replace: { lounge: ALT.dining, stair: ALT.stairDining, loft: ALT.loftDen, bed2: ALT.officeGuest },
+      labels: { loft: "Living room", lounge: "Dining room", bedB: "Office" },
+      work: "An office in the old guest room: a 1.8 m desk with three screens and a door that closes. Guests sleep on the loft's lounge bed.",
+      pitch: "The den idea, fixed. The loft becomes your only living room (one couch, one TV), right by the roof terrace. Downstairs, the double-height room becomes a dining room and the guest room becomes your office.",
+      pros: ["One couch and one TV, and the roof party starts from the lounge", "A real office with a door, plus a dining table for six", "You still sleep downstairs, next to the bathroom"],
+      cons: ["The TV is a floor away from the kitchen, so snacks mean stairs", "Overnight guests sleep in the living room", "Gives up Plan A's TV-under-the-stair idea"],
+    },
+    {
+      id: "e", letter: "D", name: "Sky loft", tag: "My pick, if it were up to me",
+      rooms: { loft: "suite", void: "net", bedA: "office", bedB: "guest", lounge: "tv", terrace: "private", cinema: "screen", balcony: "pizza" },
+      replace: { loft: [ALT.loftSuite, ALT.moonView, ALT.skyNet], bed1: ALT.officeDressing, terrace: ALT.cinema, braaiup: ALT.privateGarden, garden: ALT.privateSun, braai: ALT.balconyPizza },
+      labels: { loft: "Loft suite", void: "Sky net", bedA: "Office + dressing", tLounge: "Sun deck", tMid: "Cinema", tEnd: "Garden", balcony: "Pizza balcony" },
+      work: "An office and dressing room downstairs (the old main bedroom): a 2 m desk with three screens and a door that closes. The built-ins become your wardrobe.",
+      pitch: "If it were up to me: you sleep under the rafters facing the big north window, with a walk-on sky net over the lounge for moon-watching. The private roof gets an outdoor cinema, the old main bedroom becomes your office and dressing room, and the balcony becomes a pizza bar.",
+      pros: ["Built around what you love: the loft look and the night sky", "Every space does one thing really well, with no doubling up", "The guest room stays a proper guest room"],
+      cons: ["The sky net is the biggest spend and needs an engineer (it's easy to drop)", "Outdoor plug points needed on the roof (an electrician job)", "Entertaining is downstairs only, as in Plan B"],
+    },
+  ],
 };
+
+// Plan D's lounge is Plan A's without the pendant (the sky net spans the double-height space instead)
+{
+  const H = window.HOUSE, lounge = H.stops.find((s) => s.id === "lounge");
+  H.plans.find((p) => p.id === "e").replace.lounge = { ...lounge, ideas: lounge.ideas.map((t) => t.replace(", and a rattan pendant in the double-height space.", ". The pendant goes: the sky net spans the double-height space above.")) };
+}

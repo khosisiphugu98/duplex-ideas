@@ -158,3 +158,33 @@ body.shot #photoStatus { display: none !important; }
 #loadBadge { display: none; position: absolute; left: 16px; top: 16px; background: rgba(38, 34, 30, 0.75); color: #fff; padding: 6px 12px; border-radius: 999px; font-size: 12px; font-variant-numeric: tabular-nums; pointer-events: none; }
 body.streaming #loadBadge { display: block; }
 body.shot #loadBadge { display: none !important; }
+
+/* plans: whole-home ideas to flip between */
+#plans { margin: 4px 0 12px; }
+#planBar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; padding: 3px; background: var(--paper-2); border-radius: 12px; }
+#planBar button { border: 0; background: transparent; border-radius: 9px; padding: 6px 4px 7px; display: grid; justify-items: center; gap: 1px; line-height: 1.15; color: var(--ink-2); }
+#planBar button b { font: 560 17px/1 var(--serif); color: var(--ink); }
+#planBar button span { font-size: 11px; font-weight: 500; text-align: center; }
+#planBar button:hover { background: rgba(255, 255, 255, 0.6); }
+#planBar button.on { background: var(--ink); color: var(--paper); }
+#planBar button.on b { color: #e7b08f; }
+#planInfo .pitch { margin: 10px 0 4px; font-size: 13.5px; color: var(--ink-2); }
+#planInfo .pitch span { display: block; font: 600 11px/1.3 var(--sans); letter-spacing: 0.08em; text-transform: uppercase; color: var(--clay-ink); margin-bottom: 3px; }
+#planInfo .work { margin: 0 0 6px; font-size: 12.5px; color: var(--ink-2); padding: 6px 9px; background: var(--paper-2); border-radius: 8px; }
+#planInfo .work b { display: block; font: 600 10.5px/1.3 var(--sans); letter-spacing: 0.08em; text-transform: uppercase; color: var(--olive); }
+#planInfo details { font-size: 13px; }
+#planInfo summary { cursor: pointer; font-weight: 600; font-size: 13px; color: var(--clay-ink); list-style: none; }
+#planInfo summary::-webkit-details-marker { display: none; }
+#planInfo summary::after { content: " ↓"; }
+#planInfo details[open] summary::after { content: " ↑"; }
+#planInfo .pc { display: grid; gap: 6px; margin-top: 6px; }
+#planInfo ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 4px; color: var(--ink-2); }
+#planInfo li { position: relative; padding-left: 18px; }
+#planInfo .pros li::before { content: "+"; position: absolute; left: 2px; color: var(--olive); font-weight: 700; }
+#planInfo .cons li::before { content: "–"; position: absolute; left: 2px; color: var(--clay); font-weight: 700; }
+.stop.changed .n::after { content: ""; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--clay); margin-left: 4px; vertical-align: 1px; }
+.eyebrow em { font-style: normal; color: var(--clay-ink); }
+@media (max-width: 820px) {
+  #planBar button span { font-size: 10px; }
+  #planInfo details { display: none; }
+}
