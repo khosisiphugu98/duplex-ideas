@@ -6,43 +6,63 @@
   <title>Your duplex — today &amp; with the ideas</title>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,560&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
-    :root { --paper: #f4efe6; --ink: #26221e; --ink-2: #5d554c; --clay: #8f4a2f; --olive: #6e7449; }
+    :root { --paper: #f4efe6; --paper-2: #ebe3d6; --ink: #26221e; --ink-2: #5d554c; --clay: #8f4a2f; --olive: #6e7449; }
     * { box-sizing: border-box; }
     body { margin: 0; background: var(--paper); color: var(--ink); font: 15px/1.55 "Inter", system-ui, sans-serif; }
     header, section { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
     header { padding-top: 48px; padding-bottom: 8px; }
     .kicker { font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--clay); font-weight: 600; margin: 0; }
     h1 { font: 560 44px/1.05 "Fraunces", Georgia, serif; margin: 6px 0 10px; }
-    header p { max-width: 680px; color: var(--ink-2); }
+    header p { max-width: 720px; color: var(--ink-2); }
     header a { color: var(--clay); font-weight: 600; }
-    section { padding-top: 40px; padding-bottom: 8px; border-top: 1px solid rgba(38,34,30,.12); margin-top: 36px; }
+    #plans { position: sticky; top: 0; z-index: 5; background: rgba(244, 239, 230, 0.94); backdrop-filter: blur(6px); padding: 10px 0; margin-top: 8px; border-bottom: 1px solid rgba(38,34,30,.1); }
+    #plans .in { max-width: 1180px; margin: 0 auto; padding: 0 24px; display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+    #plans button { border: 1px solid rgba(38,34,30,.15); background: transparent; border-radius: 999px; padding: 6px 12px; font: 500 13px "Inter", sans-serif; cursor: pointer; color: var(--ink-2); }
+    #plans button b { font-family: "Fraunces", serif; color: var(--ink); margin-right: 4px; }
+    #plans button.on { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+    #plans button.on b { color: #e7b08f; }
+    #pitch { max-width: 1180px; margin: 14px auto 0; padding: 0 24px; color: var(--ink-2); }
+    #pitch a { color: var(--clay); font-weight: 600; }
+    #pitch .chk { display: inline-block; font-size: 12.5px; margin: 6px 6px 0 0; padding: 2px 9px; border-radius: 999px; background: #f3e3c4; color: #6b4d12; }
+    #pitch .chk.bad { background: #f1d3cb; color: #8a2d1c; }
+    #pitch b { color: var(--clay); text-transform: uppercase; letter-spacing: .08em; font-size: 11.5px; display: block; }
+    section { padding-top: 36px; padding-bottom: 8px; border-top: 1px solid rgba(38,34,30,.12); margin-top: 32px; }
     h2 { font: 560 28px/1.1 "Fraunces", Georgia, serif; margin: 0; }
+    h2 .tag { font: 600 11px "Inter", sans-serif; letter-spacing: .06em; text-transform: uppercase; color: var(--clay); vertical-align: middle; margin-left: 8px; }
     .area { color: var(--clay); font-size: 13px; font-weight: 500; }
-    .pair { display: grid; grid-template-columns: 1fr 1.6fr; gap: 12px; margin: 16px 0; }
-    figure { margin: 0; position: relative; }
-    figure img { width: 100%; height: 100%; object-fit: cover; border-radius: 8px; display: block; aspect-ratio: 16 / 10; }
-    figcaption { position: absolute; left: 10px; top: 10px; background: rgba(38,34,30,.75); color: #fff; font-size: 11.5px; padding: 3px 10px; border-radius: 999px; }
+    /* drag-to-compare: today's photo over the 3D, cut at the slider */
+    .ba { position: relative; margin: 16px 0; border-radius: 10px; overflow: hidden; aspect-ratio: 16 / 10; background: #1c1a18; --s: 50%; user-select: none; touch-action: pan-y; }
+    .ba img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; pointer-events: none; }
+    .ba .before { clip-path: inset(0 calc(100% - var(--s)) 0 0); }
+    .ba .line { position: absolute; top: 0; bottom: 0; left: var(--s); width: 2px; margin-left: -1px; background: #fff; box-shadow: 0 0 8px rgba(0,0,0,.4); pointer-events: none; }
+    .ba .knob { position: absolute; top: 50%; left: var(--s); width: 40px; height: 40px; margin: -20px 0 0 -20px; border-radius: 50%; background: #fff; display: grid; place-items: center; box-shadow: 0 2px 12px rgba(0,0,0,.3); pointer-events: none; font-size: 15px; }
+    .ba .lab { position: absolute; top: 10px; background: rgba(38,34,30,.75); color: #fff; font-size: 11.5px; padding: 3px 10px; border-radius: 999px; pointer-events: none; }
+    .ba .lab.l { left: 10px; } .ba .lab.r { right: 10px; }
     .gem { font: 400 17px/1.45 "Fraunces", Georgia, serif; margin: 0 0 10px; max-width: 760px; }
     ol { margin: 0; padding-left: 20px; color: var(--ink-2); max-width: 760px; display: grid; gap: 6px; }
     ol b { color: var(--ink); }
-    details { margin: 0 0 14px; } summary { cursor: pointer; color: var(--clay); font-weight: 600; font-size: 13px; }
-    .t3 { margin-top: 10px; max-width: 760px; }
-    .fit { max-width: 760px; font-size: 13px; color: var(--ink-2); background: #ebe3d6; padding: 8px 12px; border-radius: 8px; margin-top: 12px; }
+    .fit { max-width: 760px; font-size: 13px; color: var(--ink-2); background: var(--paper-2); padding: 8px 12px; border-radius: 8px; margin-top: 12px; }
+    .note { font-size: 12.5px; color: var(--ink-2); max-width: 760px; }
     .extra { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 12px; margin-top: 16px; }
+    .extra figure { margin: 0; position: relative; }
+    .extra img { width: 100%; border-radius: 8px; display: block; aspect-ratio: 16 / 10; object-fit: cover; }
+    .extra figcaption { position: absolute; left: 10px; top: 10px; background: rgba(38,34,30,.75); color: #fff; font-size: 11.5px; padding: 3px 10px; border-radius: 999px; }
     footer { max-width: 1180px; margin: 48px auto; padding: 0 24px; color: var(--ink-2); font-size: 13px; }
-    @media (max-width: 720px) { .pair { grid-template-columns: 1fr; } h1 { font-size: 34px; } }
+    @media (max-width: 720px) { h1 { font-size: 34px; } }
   </style>
 </head>
 <body>
   <header>
     <p class="kicker">Upper-floor duplex</p>
     <h1>Your duplex: today &amp; with the ideas</h1>
-    <p id="intro"></p>
-    <p>Still pictures of every room. Today's photo is on the left and the 3D concept, from about the same spot, is on the right. <a href="index.html">Open the 3D walkthrough</a> to walk around the whole unit.</p>
+    <p>Every picture pair is taken from the <b>same spot, at the same angle</b>: the left side is the real 360° photo from the listing tour, and the right side is the 3D, from exactly where that photo was taken. Drag the slider to compare. Pick a plan to see its version of each room. <a href="index.html">Open the 3D walkthrough</a> to walk around (its "Compare with today" button does the same thing, live).</p>
+    <p class="note">The photos were taken from the middle of each room, which is often where a bed, sofa or table now goes, so furniture within about 80 cm of that spot is left out of the 3D picture.</p>
   </header>
+  <nav id="plans"><div class="in"></div></nav>
+  <p id="pitch"></p>
   <main id="list"></main>
   <section>
-    <h2>Evening &amp; the whole home</h2>
+    <h2>Evening &amp; the whole home <span class="tag">Plan A</span></h2>
     <div class="extra">
       <figure><img src="renders/photo/02-lounge-today.jpg" alt="Lounge as it is today, photo-quality render" loading="lazy"><figcaption>Lounge as it is · high quality</figcaption></figure>
       <figure><img src="renders/15-dollhouse.jpg" alt="Dollhouse view of the whole duplex" loading="lazy"><figcaption>Dollhouse</figcaption></figure>
@@ -53,23 +73,52 @@
   <script src="data.js"></script>
   <script>
     const D = window.HOUSE;
-    const files = { entry: "01-front-door", lounge: "02-lounge", stair: "03-tv-under-stair", kitchen: "04-kitchen", braai: "05-balcony", bath: "06-bathroom", bed1: "07-main-bedroom", bed2: "08-guest-bedroom", loft: "09-loft", terrace: "10-terrace-covered-dining", braaiup: "11-terrace-braai", garden: "12-terrace-lounge" };
-    const today3d = { entry: 1, lounge: 1, kitchen: 1, braai: 1 };
-    const photos = { lounge: 1, kitchen: "04-kitchen-today", braai: "05-balcony-today", bed2: 1, terrace: 1 };
-    document.getElementById("intro").textContent = D.intro;
-    document.getElementById("list").innerHTML = D.stops.map((s) => `
-      <section>
-        <h2>${s.name}</h2><div class="area">${s.area}</div>
-        <div class="pair">
-          <figure><img src="${s.photos[0]}" alt="${s.name} today (photo)" loading="lazy"><figcaption>Today · photo</figcaption></figure>
-          <figure><img src="renders/${files[s.id]}.jpg" alt="${s.name} with the ideas (3D)" loading="lazy"><figcaption>With the ideas · 3D</figcaption></figure>
-        </div>
-        ${photos[s.id] ? `<details open><summary>Higher-quality render (pre-made, more realistic lighting)</summary><figure class="t3"><img src="renders/photo/${photos[s.id] === 1 ? files[s.id] : photos[s.id]}.jpg" alt="${s.name}, photo-quality render" loading="lazy"><figcaption>${photos[s.id] === 1 ? "With the ideas" : "As it is"} · high quality</figcaption></figure></details>` : ""}
-        ${today3d[s.id] ? `<details><summary>See this room as it is today, in 3D</summary><figure class="t3"><img src="renders/${files[s.id]}-today.jpg" alt="${s.name} as it is today (3D)" loading="lazy"><figcaption>As it is · 3D</figcaption></figure></details>` : ""}
-        <p class="gem">${s.gem}</p>
-        <ol>${s.ideas.map((i) => `<li>${i}</li>`).join("")}</ol>
-        ${s.fit ? `<p class="fit"><b>Measured:</b> ${s.fit.join(" · ")}</p>` : ""}
-      </section>`).join("");
+    const stopsFor = (p) => D.stops.flatMap((s) => { const r = p.replace?.[s.id]; return r ? [r].flat().map((x) => ({ ...x, changed: true })) : [s]; });
+    const nav = document.querySelector("#plans .in"), list = document.getElementById("list");
+    // plans A–D, plus your mix (and any mixes you saved in the walkthrough)
+    let saved = []; try { saved = JSON.parse(localStorage.getItem("mixes") || "[]"); } catch {}
+    nav.innerHTML = D.plans.map((p) => `<button data-plan="${p.id}"><b>${p.letter}</b>${p.name}</button>`).join("")
+      + `<button data-plan="mix" data-code="${D.mixEncode(D.mixChoice)}"><b>✦</b>Your mix</button>`
+      + saved.map((m) => `<button data-plan="mix" data-code="${m.code}" data-name="${m.name}"><b>✦</b>${m.name}</button>`).join("");
+    nav.querySelectorAll("button").forEach((b) => b.addEventListener("click", () => { if (b.dataset.code) D.mixChoice = D.mixDecode(b.dataset.code); show(b.dataset.plan, true, b); }));
+
+    function show(id, push, btn) {
+      const plan = id === "mix" ? D.buildMix(D.mixChoice) : D.plans.find((p) => p.id === id) || D.plans[0];
+      const code = plan.mix ? D.mixEncode(D.mixChoice) : null;
+      const img = (sid) => `renders/cmp/${plan.mix ? D.mixImagePlan(sid, D.mixChoice) : plan.id}-${sid}.jpg`;
+      const tagName = plan.mix ? (btn?.dataset.name || "Your mix") : `Plan ${plan.letter}`;
+      nav.querySelectorAll("button").forEach((b) => b.classList.toggle("on", plan.mix ? b.dataset.code === code && (!btn || b === btn) : b.dataset.plan === plan.id));
+      document.getElementById("pitch").innerHTML = plan.mix
+        ? `<b>✦ ${tagName} · pieces from plans A–D</b>${plan.pitch} <a href="index.html?plan=mix&mix=${code}">Change it in the walkthrough →</a><br>${plan.checks.filter((x) => x[0] !== "good").map((x) => `<span class="chk ${x[0]}">${x[0] === "bad" ? "✕" : "!"} ${x[1]}</span>`).join(" ")}`
+        : `<b>Plan ${plan.letter} · ${plan.tag}</b>${plan.pitch}<br><b style="margin-top:8px">Workspace</b>${plan.work}`;
+      list.innerHTML = stopsFor(plan).filter((s) => D.panoFor[s.id]).map((s) => `
+        <section>
+          <h2>${s.name}${s.changed ? ` <span class="tag">${tagName} version</span>` : ""}</h2><div class="area">${s.area}</div>
+          <div class="ba">
+            <img class="after" src="${img(s.id)}" alt="${s.name}: ${tagName} in 3D, from the same spot as the photo" loading="lazy">
+            <img class="before" src="renders/cmp/today-${s.id}.jpg" alt="${s.name} today (360° photo)" loading="lazy">
+            <div class="line"></div><div class="knob">⟷</div>
+            <span class="lab l">Today · 360° photo</span><span class="lab r">${tagName} · 3D, same spot</span>
+          </div>
+          <p class="gem">${s.gem}</p>
+          <ol>${s.ideas.map((i) => `<li>${i}</li>`).join("")}</ol>
+          ${s.fit ? `<p class="fit"><b>Measured:</b> ${s.fit.join(" · ")}</p>` : ""}
+        </section>`).join("");
+      list.querySelectorAll(".ba").forEach(drag);
+      if (push) {
+        const u = new URL(location.href); u.searchParams.set("plan", plan.id);
+        if (code) u.searchParams.set("mix", code); else u.searchParams.delete("mix");
+        history.replaceState(null, "", u); try { localStorage.setItem("plan", plan.id); if (code) localStorage.setItem("mix", code); } catch {}
+      }
+    }
+    function drag(el) {
+      const set = (e) => { const r = el.getBoundingClientRect(); el.style.setProperty("--s", Math.max(0, Math.min(100, ((e.clientX - r.left) / r.width) * 100)) + "%"); };
+      el.addEventListener("pointerdown", (e) => { el.setPointerCapture(e.pointerId); set(e); el.onpointermove = set; });
+      el.addEventListener("pointerup", () => (el.onpointermove = null));
+    }
+    let start = new URLSearchParams(location.search).get("plan");
+    try { start = start || localStorage.getItem("plan"); } catch {}
+    show(start || "a");
     document.getElementById("notes").innerHTML = "<b>Good to know</b><ul>" + D.notes.map((n) => `<li>${n}</li>`).join("") + "</ul><p>3D assets: CC0 scans from Poly Haven and ambientCG (see assets/ASSETS.md).</p>";
   </script>
 </body>

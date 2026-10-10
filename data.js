@@ -6,31 +6,31 @@
 const LOFT_PHOTOS = ["photos/video-loft.jpg", "listing/13442259.jpg"];
 const ALT = {
   loftSuite: {
-    id: "loft", name: "Loft suite (your bedroom)", area: "3.9 × 4.15 m · 3.5 m to the ridge · faces the big north window", level: 1,
+    id: "loft", name: "Loft suite (your bedroom)", area: "3.9 × 4.15 m · 3.5 m to the ridge · faces the north window across the void", level: 1,
     photos: LOFT_PHOTOS,
-    gem: "You sleep under the rafters with nothing between you and the big raked window across the void. The roof is yours in this plan, so nobody walks through, and there's no curtain.",
+    gem: "You sleep under the rafters with nothing between you and the north window across the void. The roof is yours in this plan, so nobody walks through, and there's no curtain.",
     ideas: [
-      "<b>A queen bed centred under the veld window</b>, head against the gable wall, facing north across the void to the big window. A low 90 cm headboard stays under the 95 cm sill.",
+      "<b>A queen bed centred under the veld window</b>, head against the gable wall, facing north across the void to the window over the lounge. A low 90 cm headboard stays under the 95 cm sill.",
       "<b>Take out the U-desk</b> (just oak tops on brackets, so no builder needed). Your 3-screen desk lives downstairs, so work stays off the bedroom floor.",
       "<b>A 1.5 m wardrobe on the west wall</b>: 50 cm deep and 2 m tall, which clears the rafters at the eave.",
-      "<b>Bedside tables, swing-arm wall lights, a big berber rug</b>, and a blackout roller on the veld window behind you. The big window stays bare for the night sky.",
+      "<b>Bedside tables, swing-arm wall lights, a big berber rug</b>, and a blackout roller on the veld window behind you. The north window stays bare for the night sky.",
       "<b>Warm LED strips under the stair treads</b> for night trips to the bathroom downstairs.",
       "<b>Heat:</b> it's right under the roof. Keep the ceiling fan and think about a split aircon.",
     ],
-    fit: ["Stair side of the bed: about 1 m", "Wardrobe side: about 66 cm (doors open fully)", "Foot of the bed to the railing: about 1.9 m", "Bed to the big window: about 8 m across the void"],
+    fit: ["Stair side of the bed: about 1 m", "Wardrobe side: about 66 cm (doors open fully)", "Foot of the bed to the railing: about 1.9 m", "Bed to the north window: about 8 m across the void"],
     cam: { pos: [6.55, 4.4, 8.55], look: [4.5, 3.3, 10.3] },
   },
   moonView: {
-    id: "loft-view", name: "Loft suite: the view from bed", area: "big raked window · about 2.4 m wide, up to 2.3 m tall", level: 1,
+    id: "loft-view", name: "Loft suite: the view from bed", area: "north window over the lounge · about 1.75 × 1.2 m", level: 1,
     photos: ["listing/13442258.jpg", "photos/video-loft.jpg"],
-    gem: "This is the view you'd fall asleep to: across the void, through the raked window, out to the night sky. It faces north, the side of the sky the moon crosses.",
+    gem: "This is the view you'd fall asleep to: across the void, through the window over the lounge, out to the night sky. It faces north, the side of the sky the moon crosses.",
     ideas: [
-      "<b>To be realistic about the moon:</b> from the pillow, the window frames a slice of sky about 17° wide and 3–15° above the horizon. You'll see the moon in it when it's low (rising, setting, or on its low nights). When it's high, you get the moonlight rather than the moon.",
+      "<b>To be realistic about the moon:</b> from the pillow, the window is about 8 m away, so it frames a small slice of sky: about 12° wide and up to about 7° above the horizon. You'll see the moon in it when it's low (rising, setting, or on its low nights). When it's high, you get the moonlight rather than the moon.",
       "<b>Want the moon overhead too?</b> Add a roof window in the slope above the bed (about 78 × 98 cm, with a blackout blind). That's a roof change, so it needs body-corporate approval and a roofer.",
       "<b>Keep the lounge dark at night:</b> its lights shine straight up into the loft. Put the lamps on smart plugs and switch them off from bed.",
-      "<b>Leave the big window bare.</b> It's high above the lounge.",
+      "<b>Leave the window bare.</b> It's high above the lounge, so nobody can see in.",
     ],
-    fit: ["Window: about 2.4 m wide, 0.55–2.85 m above the loft floor", "Sky from the pillow: about 3–15° above the horizon, about 17° wide (neighbouring roofs may hide the lowest part)"],
+    fit: ["Window: about 1.75 × 1.2 m, 0.65–1.8 m above the loft floor", "Sky from the pillow: about 12° wide, up to about 7° above the horizon (neighbouring roofs may hide the lowest part)"],
     cam: { pos: [6.45, 4.4, 9.7], look: [5.05, 4.75, 2.0] },
   },
   study: {
@@ -115,7 +115,7 @@ const ALT = {
   skyNet: {
     id: "loft-net", name: "Sky net over the lounge", area: "about 2.7 × 4.3 m · at loft-floor level", level: 1,
     photos: ["listing/13442271.jpg", "photos/video-loft.jpg"],
-    gem: "The boldest idea here: a walk-on loft net over the double-height lounge. Lie on it and the big raked window is right in front of you. It's the best moon-watching spot in the flat, and it's see-through, so light still reaches the lounge.",
+    gem: "The boldest idea here: a walk-on loft net over the double-height lounge. Lie on it and the north window is right in front of you. It's the best moon-watching spot in the flat, and it's see-through, so light still reaches the lounge.",
     ideas: [
       "<b>A double-layer loft net</b> (the kind rated for people, not decoration) on a steel frame bolted to the walls at loft-floor level. You step onto it through a gate in the railing.",
       "<b>It needs an engineer.</b> The frame and anchors hold people over a 2.8 m drop, so a structural engineer must sign off the fixings, and a specialist installer fits it.",
@@ -123,7 +123,7 @@ const ALT = {
       "<b>Floor cushions and a throw</b> on the net turn it into a stargazing deck.",
       "<b>Not for you?</b> It's the easiest part of this plan to drop. Everything else works without it.",
     ],
-    fit: ["Net: about 2.7 × 4.3 m", "Lounge headroom under it: 2.8 m", "Lying on it, the big window is 0–2 m in front of you"],
+    fit: ["Net: about 2.7 × 4.3 m", "Lounge headroom under it: 2.8 m", "Lying on it, the north window is 0–2 m in front of you"],
     cam: { pos: [4.6, 4.4, 6.9], look: [4.7, 3.6, 2.0] },
   },
   privateCovered: {
@@ -204,6 +204,18 @@ const ALT = {
     fit: ["Hardwood top: about 70 × 65 cm, which fits a 12\" oven", "The slider's opening half: about 80 cm, kept clear", "Living wall: about 1.2 × 1.0 m, from 1.65 m up"],
     cam: { pos: [4.55, 1.6, 1.65], look: [6.4, 1.4, 0.6] },
   },
+  guestSuite: {
+    id: "bed1", name: "Guest suite (the old main bedroom)", area: "2.9 × 4.1 m in front of the cupboards · pool-garden view", level: 0,
+    photos: ["photos/video-bedroom-pool-view.jpg", "listing/13442265.jpg"],
+    gem: "With you sleeping upstairs, guests get the best room downstairs: the queen bed, the built-in cupboards and the pool-garden view, next to the bathroom.",
+    ideas: [
+      "<b>Everything from Plan A's main bedroom:</b> a queen bed, two bedside tables with wall lights, the clay headboard wall and linen curtains.",
+      "<b>Next to the bathroom</b>, so guests never need to go upstairs.",
+      "<b>Keep one cupboard for guests</b> and use the rest for out-of-season clothes.",
+    ],
+    fit: ["Window side of the bed: 62 cm", "Foot of the bed to the wall: 90 cm"],
+    cam: { pos: [1.5, 1.55, 3.7], look: [1.0, 0.85, 0.3] },
+  },
 };
 
 window.HOUSE = {
@@ -228,6 +240,16 @@ window.HOUSE = {
     "Buy to these sizes: a sofa about 1.9 m long and no deeper than 90 cm, a 50–55\" TV on a low stand no taller than about 40 cm (it goes under the stair), and a guest double bed of 1.37 m.",
   ],
 
+  // the problems the plans solve, and which plans use which answer
+  problems: [
+    { q: "The roof can only be reached through the loft", a: "So if the loft is your bedroom, the roof has to be private (B, D). Otherwise guests walk past your bed. If the loft is an office or a den (A, C), the roof can be the party deck." },
+    { q: "A real workspace for three screens", a: "The loft's U-desk (A), a study with a door in the old main bedroom (B, D), or an office in the second bedroom (C)." },
+    { q: "One couch, one TV", a: "In the lounge (A, B, D), or up in the loft den, with a dining room downstairs instead (C)." },
+    { q: "Where do guests sleep?", a: "A real guest room (A, B, D), or the den's lounge bed (C)." },
+    { q: "Seeing the moon from bed", a: "The window over the lounge is about 1.75 × 1.2 m. From the loft bed you catch the moon when it's low (B, D). The sky net puts you right at the window (D; needs an engineer to sign off the fixings)." },
+    { q: "Want a bit of one plan and a bit of another?", a: "Use ✦ Mix your own: pick each area's version from A–D, and it checks the combination against these rules for you." },
+  ],
+
   notes: [
     "<b>Every plan has a real workspace</b> for at least three 27\" screens: a desk at least 1.8 m wide and 72–80 cm deep, on a triple monitor arm, and at right angles to a window so there's no glare.",
     "Room sizes come from the listing floor plan (checked against its scale bar) and your video, so they're accurate to about ±15 cm. Measure before you buy anything big.",
@@ -236,6 +258,35 @@ window.HOUSE = {
     "Fridge check: measure from the floor to the underside of the geyser box, and the recess width and depth. Height is what decides whether a normal fridge fits.",
     "Switch to <b>As it is</b> to see the unit today (empty, with the lilac passage, teal wall, carpets and white kitchen), then switch back to compare.",
   ],
+
+  // 360° photos from the listing tour, matched to the 3D model: where each was taken (x, height above
+  // its floor, z), which floor, and its heading offset in degrees. "Compare with today" stands you on
+  // that spot and shows the photo with exactly the same view as the 3D.
+  panos: {
+    // near: in "With ideas", anything closer than this (m) is hidden — the photos were taken from
+    // the middle of each room, which is often where a bed, sofa or table now goes
+    lounge: { src: "photos/360/360-lounge.jpg", pos: [4.48, 1.39, 4.0], yaw: 174.4, near: 0.8 },
+    kitchen: { src: "photos/360/360-kitchen.jpg", pos: [4.15, 1.39, 9.11], yaw: 178.6, near: 0.3 },
+    passage: { src: "photos/360/360-passage.jpg", pos: [2.6, 1.45, 6.08], yaw: 90.0, near: 0.15 },
+    bathroom: { src: "photos/360/360-bathroom.jpg", pos: [1.05, 1.45, 6.25], yaw: 104.9, near: 0.15 },
+    "main-bedroom": { src: "photos/360/360-main-bedroom.jpg", pos: [1.52, 1.45, 2.17], yaw: 261.6, near: 0.9 },
+    "second-bedroom": { src: "photos/360/360-second-bedroom.jpg", pos: [1.45, 1.39, 9.52], yaw: 97.0, near: 0.9 },
+    loft: { src: "photos/360/360-loft.jpg", pos: [5.15, 1.39, 8.7], yaw: 180.0, level: 1, near: 0.8 },
+    "roof-terrace": { src: "photos/360/360-roof-terrace.jpg", pos: [1.64, 1.54, 6.07], yaw: 0.0, level: 1, near: 0.6 },
+  },
+  // which way to face when comparing each stop (a point to look at, in plan metres; y is absolute)
+  cmpLook: {
+    entry: [6.4, 1.3, 8.6], lounge: [5.0, 1.4, 2.0], stair: [6.7, 1.1, 4.7], braai: [5.6, 1.1, 0.5], kitchen: [5.6, 1.05, 9.45],
+    passage: [2.6, 1.2, 4.85], bath: [0.15, 1.1, 6.0], bed1: [1.0, 0.95, 0.3], bed2: [1.0, 0.9, 10.8],
+    loft: [6.6, 3.55, 10.3], "loft-view": [5.05, 4.3, 2.0], "loft-net": [4.6, 3.0, 4.0],
+    terrace: [0.9, 3.4, 4.4], braaiup: [1.2, 3.6, 10.6], garden: [1.2, 3.4, 0.5],
+  },
+  // which 360° photo each tour stop compares against (the hall and balcony are seen from the lounge)
+  panoFor: {
+    entry: "lounge", lounge: "lounge", stair: "lounge", braai: "lounge", kitchen: "kitchen", passage: "passage", bath: "bathroom",
+    bed1: "main-bedroom", bed2: "second-bedroom", loft: "loft", "loft-view": "loft", "loft-net": "loft",
+    terrace: "roof-terrace", braaiup: "roof-terrace", garden: "roof-terrace",
+  },
 
   stops: [
     {
@@ -400,7 +451,7 @@ window.HOUSE = {
   plans: [
     {
       id: "a", letter: "A", name: "Loft office", tag: "What we built first",
-      rooms: { loft: "office", bedA: "bedroom", bedB: "guest", lounge: "tv", void: "pendant", terrace: "social", balcony: "counter" },
+      rooms: { loft: "office", bedA: "bedroom", bedB: "guest", lounge: "tv", void: "pendant", terrace: "social", balcony: "counter", bar: "stools", plant: "stair", kit: "std", reading: "corner" },
       work: "In the loft: three screens on a deeper east run of the U-desk, with the window to your side. A second desk on the west run.",
       pitch: "You sleep downstairs and work in the loft. The roof is the party deck, with covered dining and the braai.",
       pros: ["Two real bedrooms, next to the bathroom", "The loft's built-in U-desk gets used, so a 3-screen office costs little", "The roof works for guests and keeps braai smoke out of the lounge"],
@@ -408,17 +459,17 @@ window.HOUSE = {
     },
     {
       id: "d", letter: "B", name: "Private rooftop", tag: "Sleep under the rafters, roof all yours",
-      rooms: { loft: "suite", bedA: "study", bedB: "guest", lounge: "tv", void: "pendant", terrace: "private", balcony: "braai" },
+      rooms: { loft: "suite", bedA: "study", bedB: "guest", lounge: "tv", void: "pendant", terrace: "private", balcony: "braai", bar: "stools", plant: "stair", kit: "std", reading: "corner" },
       replace: { loft: [ALT.loftSuite, ALT.moonView], bed1: ALT.study, braai: ALT.balconyBraai, terrace: ALT.privateCovered, braaiup: ALT.privateGarden, garden: ALT.privateSun },
       labels: { loft: "Loft suite", bedA: "Study", tLounge: "Sun deck", tMid: "Daybed", tEnd: "Garden", balcony: "Balcony braai" },
       work: "A study downstairs (the old main bedroom): a 2 m desk with three screens, a door that closes, and the window to your side.",
-      pitch: "You sleep in the loft facing the big north window (no curtain), and the roof is yours: sun deck, daybed and garden. You work in a study downstairs, and entertaining moves to the lounge and the balcony braai.",
+      pitch: "You sleep in the loft facing the north window (no curtain), and the roof is yours: sun deck, daybed and garden. You work in a study downstairs, and entertaining moves to the lounge and the balcony braai.",
       pros: ["A true private suite: your bedroom with its own roof terrace", "Nobody walks through your bedroom, ever", "Work and sleep are on different floors, so the workday really ends", "The balcony braai you already have gets used"],
       cons: ["Entertaining shrinks to the lounge and the 3.9 × 1.9 m balcony", "Braai smoke is closer to the lounge", "The bathroom is a floor down, and it's hotter under the roof", "Guests lose the best space in the unit"],
     },
     {
       id: "c", letter: "C", name: "Living upstairs", tag: "The den, with one couch and one TV",
-      rooms: { loft: "den", bedA: "bedroom", bedB: "office", lounge: "dining", terrace: "social", balcony: "counter" },
+      rooms: { loft: "den", bedA: "bedroom", bedB: "office", lounge: "dining", terrace: "social", balcony: "counter", bar: "stools", plant: "stair", kit: "std", reading: "corner" },
       replace: { lounge: ALT.dining, stair: ALT.stairDining, loft: ALT.loftDen, bed2: ALT.officeGuest },
       labels: { loft: "Living room", lounge: "Dining room", bedB: "Office" },
       work: "An office in the old guest room: a 1.8 m desk with three screens and a door that closes. Guests sleep on the loft's lounge bed.",
@@ -428,11 +479,11 @@ window.HOUSE = {
     },
     {
       id: "e", letter: "D", name: "Sky loft", tag: "My pick, if it were up to me",
-      rooms: { loft: "suite", void: "net", bedA: "office", bedB: "guest", lounge: "tv", terrace: "private", cinema: "screen", balcony: "pizza" },
+      rooms: { loft: "suite", void: "net", bedA: "office", bedB: "guest", lounge: "tv", terrace: "private", cinema: "screen", balcony: "pizza", bar: "stools", plant: "stair", kit: "std", reading: "corner" },
       replace: { loft: [ALT.loftSuite, ALT.moonView, ALT.skyNet], bed1: ALT.officeDressing, terrace: ALT.cinema, braaiup: ALT.privateGarden, garden: ALT.privateSun, braai: ALT.balconyPizza },
       labels: { loft: "Loft suite", void: "Sky net", bedA: "Office + dressing", tLounge: "Sun deck", tMid: "Cinema", tEnd: "Garden", balcony: "Pizza balcony" },
       work: "An office and dressing room downstairs (the old main bedroom): a 2 m desk with three screens and a door that closes. The built-ins become your wardrobe.",
-      pitch: "If it were up to me: you sleep under the rafters facing the big north window, with a walk-on sky net over the lounge for moon-watching. The private roof gets an outdoor cinema, the old main bedroom becomes your office and dressing room, and the balcony becomes a pizza bar.",
+      pitch: "If it were up to me: you sleep under the rafters facing the north window, with a walk-on sky net over the lounge for moon-watching. The private roof gets an outdoor cinema, the old main bedroom becomes your office and dressing room, and the balcony becomes a pizza bar.",
       pros: ["Built around what you love: the loft look and the night sky", "Every space does one thing really well, with no doubling up", "The guest room stays a proper guest room"],
       cons: ["The sky net is the biggest spend and needs an engineer (it's easy to drop)", "Outdoor plug points needed on the roof (an electrician job)", "Entertaining is downstairs only, as in Plan B"],
     },
@@ -443,4 +494,126 @@ window.HOUSE = {
 {
   const H = window.HOUSE, lounge = H.stops.find((s) => s.id === "lounge");
   H.plans.find((p) => p.id === "e").replace.lounge = { ...lounge, ideas: lounge.ideas.map((t) => t.replace(", and a rattan pendant in the double-height space.", ". The pendant goes: the sky net spans the double-height space above.")) };
+}
+
+// ---------------------------------------------------------------- mix your own
+// Pick each area's version from plans A–D. The lounge follows the loft (one couch and one TV in the
+// whole flat), and checks() tests the combination against the house rules: a 3-screen workspace, a bed
+// for you, somewhere for guests, and nobody walking through your bedroom to reach the roof.
+{
+  const H = window.HOUSE, plan = (id) => H.plans.find((p) => p.id === id);
+  H.mixSlots = [
+    // [value, short label, which plans it comes from, longer description (tooltip)]
+    { key: "loft", label: "Loft", opts: [["office", "Office", "A", "Three screens on the built-in U-desk"], ["suite", "Bedroom", "B, D", "You sleep under the rafters, facing the north window"], ["den", "Den + TV", "C", "The one couch and TV move up here; downstairs becomes a dining room"]] },
+    { key: "bedA", label: "Main bed­room", opts: [["bedroom", "Bedroom", "A, C", "A queen bed by the pool-view window"], ["study", "Study", "B", "Three-screen desk with a door, plus a sleeper couch"], ["office", "Office", "D", "Three-screen desk, plus your clothes in the built-ins"]] },
+    { key: "bedB", label: "2nd bed­room", opts: [["guest", "Guest room", "A, B, D", "A double bed for guests"], ["office", "Office", "C", "Three-screen desk with a door"]] },
+    { key: "void", label: "Over the lounge", opts: [["pendant", "Pendant", "A, B", "A big rattan pendant in the double height"], ["net", "Sky net", "D", "A walk-on net for lying under the window (engineer sign-off)"]] },
+    { key: "roof", label: "Roof", opts: [["social", "Party deck", "A, C", "Covered dining, the braai and a lounge for guests"], ["private", "Private", "B", "Sun deck, daybed and garden, just for you"], ["cinema", "+ Cinema", "D", "Private, with a roll-down screen facing the daybed"]] },
+    { key: "balcony", label: "Balcony", opts: [["counter", "Counter", "A, C", "The braai becomes a coffee counter"], ["braai", "Braai", "B", "The built-in braai is used as a braai"], ["pizza", "Pizza bar", "D", "Gas pizza oven and a living wall"]] },
+  ];
+  // each plan as a mix, so you can start from one
+  H.mixFromPlan = { a: "office-bedroom-guest-pendant-social-counter", d: "suite-study-guest-pendant-private-braai", c: "den-bedroom-office-pendant-social-counter", e: "suite-office-guest-net-cinema-pizza" };
+  H.mixPresets = [
+    { name: "D without the sky net", c: { loft: "suite", bedA: "office", bedB: "guest", void: "pendant", roof: "cinema", balcony: "pizza" } },
+    { name: "B with the pizza balcony", c: { loft: "suite", bedA: "study", bedB: "guest", void: "pendant", roof: "private", balcony: "pizza" } },
+    { name: "A with a private roof", c: { loft: "office", bedA: "bedroom", bedB: "guest", void: "pendant", roof: "cinema", balcony: "braai" } },
+  ];
+  const DEFAULT = { loft: "office", bedA: "bedroom", bedB: "guest", void: "pendant", roof: "social", balcony: "counter" };
+  const enc = (c) => H.mixSlots.map((s) => c[s.key]).join("-");
+  const dec = (t) => { const v = (t || "").split("-"), c = { ...DEFAULT }; H.mixSlots.forEach((s, i) => { if (s.opts.some((o) => o[0] === v[i])) c[s.key] = v[i]; }); return c; };
+  H.mixEncode = enc; H.mixDecode = dec;
+  let saved = new URLSearchParams(location.search).get("mix");
+  try { saved = saved || localStorage.getItem("mix"); } catch {}
+  H.mixChoice = dec(saved);
+
+  // neutral copies of a few cards whose text was written for one particular plan
+  const denMix = { ...ALT.loftDen, gem: "The loft becomes the flat's living room: the one couch (a lounge bed you can sleep on) and the one TV, right by the terrace door. Guests heading for the roof are just passing through the lounge.", ideas: ALT.loftDen.ideas.slice(0, 4).concat("<b>Downstairs, the double-height room becomes a dining room</b> (see the lounge stop), so there's still only one couch and one TV.") };
+  const officeGuestMix = { ...ALT.officeGuest, gem: "A proper home office with a door: three screens, the veld window to your side, and shelves behind you for calls.", ideas: ALT.officeGuest.ideas.filter((t) => !/lounge bed/.test(t)) };
+  const officeDressingMix = { ...ALT.officeDressing, gem: "The old main bedroom becomes your workday room: three screens, a door that closes, the built-ins for clothes, and a reading chair by the pool-view window." };
+
+  // each check: [good | warn | bad, text, fix (choices to apply) or null, fix label]
+  H.mixChecks = (c) => {
+    const out = [], good = (t) => out.push(["good", t]), warn = (t, f, l) => out.push(["warn", t, f, l]), bad = (t, f, l) => out.push(["bad", t, f, l]);
+    // workspace
+    const work = [];
+    if (c.loft === "office") work.push("the loft's U-desk");
+    if (c.bedA === "study") work.push("the study (the old main bedroom)");
+    if (c.bedA === "office") work.push("the office (the old main bedroom)");
+    if (c.bedB === "office") work.push("the office (the second bedroom)");
+    if (work.length) good(`3-screen workspace: ${work.join(" and ")}`);
+    else bad("No 3-screen workspace.", c.loft === "suite" ? { bedA: "study" } : { loft: "office" }, c.loft === "suite" ? "Make the main bedroom a study" : "Make the loft an office");
+    // your bed
+    let you = null;
+    if (c.loft === "suite") { you = "loft"; good("You sleep in the loft, facing the north window"); }
+    else if (c.bedA === "bedroom") { you = "bedA"; good("You sleep in the main bedroom, next to the bathroom"); }
+    else if (c.bedB === "guest") { you = "bedB"; warn("You'd be sleeping in the small guest room.", { bedA: "bedroom" }, "Make the main bedroom your bedroom"); }
+    else if (c.loft === "den") { you = "den"; warn("You'd be sleeping on the den's lounge bed.", { bedA: "bedroom" }, "Make the main bedroom your bedroom"); }
+    else bad("There's nowhere for you to sleep.", { bedA: "bedroom" }, "Make the main bedroom your bedroom");
+    // guests
+    const rooms = [], couches = [];
+    if (c.bedB === "guest" && you !== "bedB") rooms.push("the guest room");
+    if (c.bedA === "bedroom" && you !== "bedA") rooms.push("the main bedroom");
+    if (c.bedA === "study") couches.push("the study's sleeper couch");
+    if (c.loft === "den" && you !== "den") couches.push("the den's lounge bed");
+    if (rooms.length) good(`Guests sleep in ${rooms.join(" or ")}`);
+    else if (couches.length) warn(`Guests sleep on ${couches.join(" or ")}, not in a room of their own.`, c.bedB === "office" && work.length > 1 ? { bedB: "guest" } : null, "Make the second bedroom a guest room");
+    else bad("There's nowhere for guests to sleep.", { bedB: "guest" }, "Make the second bedroom a guest room");
+    // one TV
+    good(c.loft === "den" ? "One couch and one TV, in the loft den. Downstairs becomes a dining room" : "One couch and one TV, in the lounge");
+    // the roof route
+    if (c.loft === "suite" && c.roof === "social") bad("Guests would walk past your bed to reach the roof (the curtain problem).", { roof: "private" }, "Make the roof private");
+    else if (c.loft === "suite") good("Nobody walks through your bedroom: the roof is just yours");
+    else if (c.roof === "social") good("Guests reach the roof through the loft, which isn't a bedroom");
+    // braai
+    const braais = (c.roof === "social" ? 1 : 0) + (c.balcony === "braai" ? 1 : 0);
+    if (!braais) warn("No braai anywhere: the roof's private and the built-in braai isn't used.", { balcony: "braai" }, "Use the balcony braai");
+    if (braais === 2) warn("Two braais (the roof's kettle braai and the balcony's). You only need one.", { balcony: "counter" }, "Make the balcony a counter");
+    if (c.void === "net" && c.loft !== "den") warn("The sky net needs an engineer to sign off the wall fixings first.", { void: "pendant" }, "Swap it for the pendant");
+    return out;
+  };
+  // which plan's pre-rendered picture shows this stop the way the mix has it (used by the gallery)
+  H.mixImagePlan = (stopId, c) => {
+    const den = c.loft === "den", net = c.void === "net" && !den;
+    const by = {
+      loft: den ? "c" : c.loft === "suite" ? (net ? "e" : "d") : "a", "loft-view": net ? "e" : "d", "loft-net": "e",
+      lounge: den ? "c" : net ? "e" : "a", stair: den ? "c" : "a", entry: den ? "c" : "a", kitchen: "a", bath: "a",
+      bed1: { bedroom: "a", study: "d", office: "e" }[c.bedA], bed2: c.bedB === "office" ? "c" : "a",
+      terrace: { social: "a", private: "d", cinema: "e" }[c.roof], braaiup: c.roof === "social" ? "a" : "d", garden: c.roof === "social" ? "a" : "d",
+      braai: { counter: "a", braai: "d", pizza: "e" }[c.balcony],
+    };
+    return by[stopId] || "a";
+  };
+
+  H.buildMix = (c) => {
+    const den = c.loft === "den", suite = c.loft === "suite", net = c.void === "net" && !den;
+    const rooms = { loft: c.loft, bedA: c.bedA, bedB: c.bedB, lounge: den ? "dining" : "tv", terrace: c.roof === "social" ? "social" : "private", balcony: c.balcony, bar: "stools", plant: "stair", kit: "std", reading: "corner" };
+    if (!den) rooms.void = net ? "net" : "pendant";
+    if (c.roof === "cinema") rooms.cinema = "screen";
+    const loftStop = H.stops.find((s) => s.id === "loft"), r = {}, L = {};
+    const loft = suite ? [ALT.loftSuite, ALT.moonView] : den ? [denMix] : [];
+    if (net) loft.push(ALT.skyNet);
+    if (loft.length) r.loft = c.loft === "office" ? [loftStop, ...loft] : loft;
+    if (den) { r.lounge = ALT.dining; r.stair = ALT.stairDining; L.loft = "Living room"; L.lounge = "Dining room"; }
+    if (net) { r.lounge = plan("e").replace.lounge; L.void = "Sky net"; }
+    if (suite) L.loft = "Loft suite";
+    if (c.bedA === "study") { r.bed1 = ALT.study; L.bedA = "Study"; }
+    if (c.bedA === "office") { r.bed1 = officeDressingMix; L.bedA = "Office + dressing"; }
+    if (c.bedA === "bedroom" && suite) { r.bed1 = ALT.guestSuite; L.bedA = "Guest suite"; }
+    if (c.bedB === "office") { r.bed2 = officeGuestMix; L.bedB = "Office"; }
+    if (c.roof !== "social") { r.terrace = c.roof === "cinema" ? ALT.cinema : ALT.privateCovered; r.braaiup = ALT.privateGarden; r.garden = ALT.privateSun; Object.assign(L, { tLounge: "Sun deck", tMid: c.roof === "cinema" ? "Cinema" : "Daybed", tEnd: "Garden" }); }
+    if (c.balcony === "braai") { r.braai = ALT.balconyBraai; L.balcony = "Balcony braai"; }
+    if (c.balcony === "pizza") { r.braai = ALT.balconyPizza; L.balcony = "Pizza balcony"; }
+    const checks = H.mixChecks(c);
+    const PH = { loft: { office: "an office", suite: "your bedroom", den: "the den, with the couch and TV" }, bedA: { bedroom: "a bedroom", study: "a study", office: "an office + dressing room" },
+      bedB: { guest: "a guest room", office: "an office" }, roof: { social: "the party deck", private: "your private retreat", cinema: "your private retreat with a cinema screen" }, balcony: { counter: "a coffee counter", braai: "the braai", pizza: "a pizza bar" } };
+    const name = (k) => PH[k][c[k]];
+    return {
+      id: "mix", letter: "✦", name: "Mix your own", tag: "Pieces from A–D", mix: true, choice: c, checks,
+      same: Object.entries(H.mixFromPlan).find(([, m]) => m === enc(c))?.[0],
+      rooms, replace: r, labels: L,
+      work: checks.find((x) => /^3-screen/.test(x[1]))?.[1].replace(/^3-screen workspace: /, "") || "None yet: see the checks below",
+      pitch: `The loft is ${name("loft")}, the main bedroom ${name("bedA")} and the second bedroom ${name("bedB")}. The roof is ${name("roof")}, and the balcony has ${name("balcony")}${net ? ". The sky net spans the lounge" : ""}.`,
+      pros: checks.filter((x) => x[0] === "good").map((x) => x[1]), cons: checks.filter((x) => x[0] !== "good").map((x) => x[1]),
+    };
+  };
 }
