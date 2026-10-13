@@ -1,12 +1,13 @@
 // Content for the walkthrough: one entry per stop on the tour.
 // cam.pos / cam.look are in metres on the floor-plan grid (x → east, z → south, y up; the loft
 // and roof terrace are at y = 2.8). Every cam.pos is a walkable spot — the tour walks you there.
-// "fit" = measured clearances in the 3D model (sizes re-measured from the floor plan, ±15 cm).
+// "fit" = measured clearances in the 3D model (sizes re-measured from the floor plan, ±15 cm; the loft
+// and its roof re-measured from the 360° photos on 2026-10-13).
 // Stops that only exist in some plans (see `plans` at the bottom). Same format as `stops`.
 const LOFT_PHOTOS = ["photos/video-loft.jpg", "listing/13442259.jpg"];
 const ALT = {
   loftSuite: {
-    id: "loft", name: "Loft suite (your bedroom)", area: "3.9 × 4.15 m · 3.5 m to the ridge · faces the north window across the void", level: 1,
+    id: "loft", name: "Loft suite (your bedroom)", area: "3.7 × 4.2 m inside · ceiling 2.5 m rising to 3.85 m · faces the north window across the void", level: 1,
     photos: LOFT_PHOTOS,
     gem: "You sleep under the rafters with nothing between you and the north window across the void. The roof is yours in this plan, so nobody walks through, and there's no curtain.",
     ideas: [
@@ -17,20 +18,20 @@ const ALT = {
       "<b>Warm LED strips under the stair treads</b> for night trips to the bathroom downstairs.",
       "<b>Heat:</b> it's right under the roof. Keep the ceiling fan and think about a split aircon.",
     ],
-    fit: ["Stair side of the bed: about 1 m", "Wardrobe side: about 66 cm (doors open fully)", "Foot of the bed to the railing: about 1.9 m", "Bed to the north window: about 8 m across the void"],
+    fit: ["Stair side of the bed: about 1 m", "Wardrobe side: about 66 cm (doors open fully)", "Foot of the bed to the railing: about 2.1 m", "Bed to the north window: about 8 m across the void"],
     cam: { pos: [6.55, 4.4, 8.55], look: [4.5, 3.3, 10.3] },
   },
   moonView: {
-    id: "loft-view", name: "Loft suite: the view from bed", area: "north window over the lounge · about 1.75 × 1.2 m", level: 1,
+    id: "loft-view", name: "Loft suite: the view from bed", area: "north window over the lounge · about 1.75 m wide, its top sloping with the roof", level: 1,
     photos: ["listing/13442258.jpg", "photos/video-loft.jpg"],
     gem: "This is the view you'd fall asleep to: across the void, through the window over the lounge, out to the night sky. It faces north, the side of the sky the moon crosses.",
     ideas: [
-      "<b>To be realistic about the moon:</b> from the pillow, the window is about 8 m away, so it frames a small slice of sky: about 12° wide and up to about 7° above the horizon. You'll see the moon in it when it's low (rising, setting, or on its low nights). When it's high, you get the moonlight rather than the moon.",
+      "<b>To be realistic about the moon:</b> from the pillow, the window is about 8 m away, so it frames a small slice of sky: about 12° wide, from about 2° above the horizon up to 6–10° (its top slopes up with the roof, so the east end is taller). You'll see the moon in it when it's low (rising, setting, or on its low nights). When it's high, you get the moonlight rather than the moon.",
       "<b>Want the moon overhead too?</b> Add a roof window in the slope above the bed (about 78 × 98 cm, with a blackout blind). That's a roof change, so it needs body-corporate approval and a roofer.",
       "<b>Keep the lounge dark at night:</b> its lights shine straight up into the loft. Put the lamps on smart plugs and switch them off from bed.",
       "<b>Leave the window bare.</b> It's high above the lounge, so nobody can see in.",
     ],
-    fit: ["Window: about 1.75 × 1.2 m, 0.65–1.8 m above the loft floor", "Sky from the pillow: about 12° wide, up to about 7° above the horizon (neighbouring roofs may hide the lowest part)"],
+    fit: ["Window: about 1.75 m wide, 1 m above the loft floor; its top slopes from about 1.55 m (west) to 2.2 m (east)", "Sky from the pillow: about 12° wide, up to about 10° above the horizon (neighbouring roofs may hide the lowest part)"],
     cam: { pos: [6.45, 4.4, 9.7], look: [5.05, 4.75, 2.0] },
   },
   study: {
@@ -74,9 +75,9 @@ const ALT = {
     cam: { pos: [2.3, 1.6, 8.5], look: [0.5, 1.05, 9.9] },
   },
   dining: {
-    id: "lounge", name: "Dining room (double-height)", area: "2.8 m wide · about 5 m to the ridge", level: 0,
+    id: "lounge", name: "Dining room (double-height)", area: "2.8 m wide · ceiling 5.3 m rising to 6.7 m", level: 0,
     photos: ["listing/13442271.jpg", "listing/13442267.jpg"],
-    gem: "With the couch and TV moved up to the loft, the double-height room becomes a dining room: dinner under a 5 m ceiling, between the kitchen and the balcony.",
+    gem: "With the couch and TV moved up to the loft, the double-height room becomes a dining room: dinner under a ceiling more than 5 m up, between the kitchen and the balcony.",
     ideas: [
       "<b>A 1.8 m table that seats six:</b> three on a cushioned bench along the west wall and three chairs on the stair side. With the bench, nobody pulls out against the wall, and no chair at the far end, because that's the way through to the bedrooms.",
       "<b>A big rattan pendant hung low</b>, about 1 m above the table, so the tall room still feels intimate at night.",
@@ -87,7 +88,7 @@ const ALT = {
     cam: { pos: [5.7, 1.65, 2.4], look: [4.3, 0.85, 5.6] },
   },
   stairDining: {
-    id: "stair", name: "The staircase (sideboard wall)", area: "about 4 m long · rises from beside the slider", level: 0,
+    id: "stair", name: "The staircase (sideboard wall)", area: "about 3.8 m long · rises from beside the slider", level: 0,
     photos: ["photos/video-stair.jpg", "listing/13442270.jpg"],
     gem: "The low cabinet stays under the stair, and a 1.4 m sideboard takes the TV's spot. It's a serving surface right beside the table.",
     ideas: [
@@ -99,7 +100,7 @@ const ALT = {
     cam: { pos: [4.3, 1.55, 5.65], look: [6.6, 1.0, 4.3] },
   },
   loftDen: {
-    id: "loft", name: "Loft living room (the den)", area: "3.9 × 4.15 m · your one couch and one TV", level: 1,
+    id: "loft", name: "Loft living room (the den)", area: "3.7 × 4.2 m inside · your one couch and one TV", level: 1,
     photos: LOFT_PHOTOS,
     gem: "The den becomes the only living room in the flat, which fixes both problems: one couch and one TV, and the walk to the roof is just people passing through the lounge. The lounge bed is also the guest bed.",
     ideas: [
@@ -109,11 +110,11 @@ const ALT = {
       "<b>Deep olive behind the lounge bed</b>, warm wall lights, and the terrace door right there for drinks outside.",
       "<b>Downstairs gets a dining room</b> instead (see the lounge stop), and the guest room becomes your office.",
     ],
-    fit: ["Route from the stair to the terrace door: about 1.9 m wide, clear", "Lounge bed to coffee table: about 43 cm", "Coffee table to console: about 46 cm, to the bar: about 52 cm", "Cushions to the TV: about 3 m"],
+    fit: ["Route from the stair to the terrace door: about 2.1 m wide, clear", "Lounge bed to coffee table: about 43 cm", "Coffee table to console: about 46 cm, to the bar: about 52 cm", "Cushions to the TV: about 3 m"],
     cam: { pos: [5.0, 4.4, 7.35], look: [5.1, 3.3, 10.4] },
   },
   skyNet: {
-    id: "loft-net", name: "Sky net over the lounge", area: "about 2.7 × 4.3 m · at loft-floor level", level: 1,
+    id: "loft-net", name: "Sky net over the lounge", area: "about 2.7 × 4.15 m · at loft-floor level", level: 1,
     photos: ["listing/13442271.jpg", "photos/video-loft.jpg"],
     gem: "The boldest idea here: a walk-on loft net over the double-height lounge. Lie on it and the north window is right in front of you. It's the best moon-watching spot in the flat, and it's see-through, so light still reaches the lounge.",
     ideas: [
@@ -123,7 +124,7 @@ const ALT = {
       "<b>Floor cushions and a throw</b> on the net turn it into a stargazing deck.",
       "<b>Not for you?</b> It's the easiest part of this plan to drop. Everything else works without it.",
     ],
-    fit: ["Net: about 2.7 × 4.3 m", "Lounge headroom under it: 2.8 m", "Lying on it, the north window is 0–2 m in front of you"],
+    fit: ["Net: about 2.7 × 4.15 m", "Lounge headroom under it: 2.8 m", "Lying on it, the north window is 0–2 m in front of you"],
     cam: { pos: [4.6, 4.4, 6.9], look: [4.7, 3.6, 2.0] },
   },
   privateCovered: {
@@ -246,7 +247,7 @@ const ALT = {
     cam: { pos: [5.45, 1.6, 4.5], look: [3.3, 1.15, 4.45] },
   },
   stairStudio: {
-    id: "stair", name: "The staircase (storage wall)", area: "about 4 m long · rises from beside the slider", level: 0,
+    id: "stair", name: "The staircase (storage wall)", area: "about 3.8 m long · rises from beside the slider", level: 0,
     photos: ["photos/video-stair.jpg", "listing/13442270.jpg"],
     gem: "Under the stair is where the study hides its clutter: the low cabinet, then a closed credenza for the printer, paper and files, then the tall plant.",
     ideas: [
@@ -258,7 +259,7 @@ const ALT = {
     cam: { pos: [4.3, 1.55, 5.65], look: [6.6, 1.0, 4.6] },
   },
   loftDenStudio: {
-    id: "loft", name: "Loft den (the living room)", area: "3.9 × 4.15 m · your one couch and one TV", level: 1,
+    id: "loft", name: "Loft den (the living room)", area: "3.7 × 4.2 m inside · your one couch and one TV", level: 1,
     photos: LOFT_PHOTOS,
     gem: "As in Plan C, the loft is the living room: the lounge bed, the 65\" TV on the oak-slat wall, and the bar, right by the terrace door. Work stays downstairs, so coming up here at night feels like leaving the office.",
     ideas: [
@@ -268,8 +269,38 @@ const ALT = {
       "<b>Deep olive behind the lounge bed</b>, warm wall lights, and the terrace door right there for drinks outside.",
       "<b>Guests get the second bedroom back:</b> the study is downstairs now, so it's a real guest room again.",
     ],
-    fit: ["Route from the stair to the terrace door: about 1.9 m wide, clear", "Lounge bed to coffee table: about 43 cm", "Cushions to the TV: about 3 m"],
+    fit: ["Route from the stair to the terrace door: about 2.1 m wide, clear", "Lounge bed to coffee table: about 43 cm", "Cushions to the TV: about 3 m"],
     cam: { pos: [5.0, 4.4, 7.35], look: [5.1, 3.3, 10.4] },
+  },
+  loftLiving: {
+    id: "loft", name: "Loft lounge (the living room)", area: "3.7 × 4.2 m inside · ceiling 2.5 m rising to 3.85 m · one couch, one TV", level: 1,
+    photos: LOFT_PHOTOS,
+    gem: "Re-measured, the loft is deeper than we first drew it, and its east wall is about 3.85 m tall, not 2.3 m. So the living room gets what the old shape couldn't hold: a corner sofa with a chaise, a 75\" TV set into a library that runs up to the rafters, a bar, and two chairs for watching the moon over the void.",
+    ideas: [
+      "<b>One corner sofa, still the only couch in the flat:</b> three seats along the terrace wall and a chaise along the veld window, pointing at the TV. The chaise is where you lie down for a film.",
+      "<b>A library wall on the tall east wall:</b> oak shelves 2.7 m wide and 3.55 m high (38 cm deep) on a dark back panel, with closed cupboards along the bottom. It uses the height the old drawing didn't have, and the books soak up the echo of the high ceiling.",
+      "<b>The one TV (75\")</b> sits in the library's middle bay at seated eye height, about 3.2 m from your eyes on the sofa. That's the right distance for a 75\".",
+      "<b>A bar bay by the stair:</b> a bar fridge behind a glass door in the bottom cupboard, and bottles and glasses on the two shelves above. Guests heading up to the roof pick up a drink on the way past.",
+      "<b>A hook-on library ladder</b> on a steel rail at 3.1 m reaches the top shelves and parks at the south end. The library is tall, so fix it to the party wall with proper anchors.",
+      "<b>Two moon chairs at the railing</b>, facing the north window across the void (see the next stop).",
+      "<b>The route to the roof stays open:</b> 90 cm from the stair, past the chairs and the sofa arm, to the terrace door. The stair landing stays clear too.",
+    ],
+    fit: ["Corner sofa: 2.05 m along the west wall, chaise to 2.1 m along the south wall, 95 cm deep", "Coffee table to the seats: 45 cm; to the library: about 1.4 m", "Your eyes to the TV: about 3.2 m (75\")", "Route from the stair to the terrace door: 90 cm at its narrowest", "Stair landing kept clear: about 0.95 × 1.45 m", "The listing's 17 m² is measured to the wall centres (3.9 × 4.3 m); the usable floor is about 15.5 m²"],
+    cam: { pos: [3.75, 4.4, 7.85], look: [6.4, 3.9, 9.6] },
+    drawing: "renders/cmp/plan-f-loft.png",
+  },
+  moonSeats: {
+    id: "loft-view", name: "Loft lounge: the moon chairs", area: "north window over the lounge · about 5 m from the chairs", level: 1,
+    photos: ["listing/13442258.jpg", "photos/video-loft.jpg"],
+    gem: "You love seeing the moon through the north window. These two chairs sit at the railing and face it, at about 5 m instead of the 8 m from the bed in Plans B and D, so the window fills far more of your view. It's the best seat in the flat at night.",
+    ideas: [
+      "<b>Two low lounge chairs</b> (about 75 cm square) at the railing, turned a little towards each other, with a small drum table between your knees for a drink.",
+      "<b>Darken the void:</b> the lounge below is your studio now, so the one-tap 'after work' scene turns its lights off and the window stands out against the dark.",
+      "<b>What you'll see:</b> the window fills about 20° of your view, from eye level up to about 12° above it at its tall east end. You'll catch the moon when it's low in the northern sky. When it's high, you get the moonlight rather than the moon.",
+      "<b>Leave the window bare.</b> It's high above the lounge, so nobody can see in.",
+    ],
+    fit: ["Knee room to the railing: about 45 cm", "Chairs to the window: about 5 m (the bed in B and D is about 8 m away)", "Route behind the chairs: 90 cm"],
+    cam: { pos: [5.0, 4.4, 8.3], look: [4.95, 3.05, 2.0] },
   },
   guestSuite: {
     id: "bed1", name: "Guest suite (the old main bedroom)", area: "2.9 × 4.1 m in front of the cupboards · pool-garden view", level: 0,
@@ -310,16 +341,17 @@ window.HOUSE = {
   // the problems the plans solve, and which plans use which answer
   problems: [
     { q: "The roof can only be reached through the loft", a: "So if the loft is your bedroom, the roof has to be private (B, D). Otherwise guests walk past your bed. If the loft is an office or a den (A, C), the roof can be the party deck." },
-    { q: "A real workspace for three screens", a: "The loft's U-desk (A), a study with a door in the old main bedroom (B, D), an office in the second bedroom (C), or a two-station desk wall in the lounge (E)." },
-    { q: "One couch, one TV", a: "In the lounge (A, B, D), or up in the loft den, with the lounge as a dining room (C) or a studio office (E)." },
+    { q: "A real workspace for three screens", a: "The loft's U-desk (A), a study with a door in the old main bedroom (B, D), an office in the second bedroom (C), or a two-station desk wall in the lounge (E, F)." },
+    { q: "One couch, one TV", a: "In the lounge (A, B, D), or up in the loft, with the lounge as a dining room (C) or a studio office (E, F)." },
     { q: "Where do guests sleep?", a: "A real guest room (A, B, D), or the den's lounge bed (C)." },
-    { q: "Seeing the moon from bed", a: "The window over the lounge is about 1.75 × 1.2 m. From the loft bed you catch the moon when it's low (B, D). The sky net puts you right at the window (D; needs an engineer to sign off the fixings)." },
+    { q: "Seeing the moon from bed", a: "The window over the lounge is about 1.75 m wide, its top sloping up to the east. From the loft bed you catch the moon when it's low (B, D). The moon chairs at the railing are about 5 m from it (F), and the sky net puts you right at the window (D; needs an engineer to sign off the fixings)." },
     { q: "Want a bit of one plan and a bit of another?", a: "Use ✦ Mix your own: pick each area's version from A–D, and it checks the combination against these rules for you." },
   ],
 
   notes: [
     "<b>Every plan has a real workspace</b> for at least three 27\" screens: a desk at least 1.8 m wide and 72–80 cm deep, on a triple monitor arm, and at right angles to a window so there's no glare.",
     "Room sizes come from the listing floor plan (checked against its scale bar) and your video, so they're accurate to about ±15 cm. Measure before you buy anything big.",
+    "<b>The loft was re-measured</b> from the 360° photos: it's about 3.7 × 4.2 m inside (the railing is 20 cm further north than first drawn), and the roof is a single slope, 2.5 m high at the terrace wall and about 3.85 m at the east wall. It isn't a centred gable. Worth a tape measure on your next visit.",
     "Comfort rules used throughout: main walkways at least 90 cm, other walkways at least 70 cm, at least 60 cm beside beds and in front of cupboards, 40–45 cm between a sofa and its table, and at least 75 cm behind dining chairs.",
     "Sectional title: the terrace roof (pergola), anything fixed to exterior walls, and using a braai on the terrace all need body-corporate approval. Ask before you buy.",
     "Fridge check: measure from the floor to the underside of the geyser box, and the recess width and depth. Height is what decides whether a normal fridge fits.",
@@ -382,7 +414,7 @@ window.HOUSE = {
       cam: { pos: [5.7, 1.65, 2.4], look: [4.3, 0.85, 5.6] },
     },
     {
-      id: "stair", name: "The staircase (TV wall)", area: "about 4 m long · rises from beside the slider", level: 0,
+      id: "stair", name: "The staircase (TV wall)", area: "about 3.8 m long · rises from beside the slider", level: 0,
       photos: ["photos/video-stair.jpg", "listing/13442270.jpg"],
       gem: "The bottom step is right beside the balcony slider, and the stair rises along the east wall to the loft over the kitchen. The space under its upper half is where the TV goes.",
       ideas: [
@@ -459,7 +491,7 @@ window.HOUSE = {
       cam: { pos: [2.5, 1.55, 8.55], look: [0.4, 0.8, 10.4] },
     },
     {
-      id: "loft", name: "Loft", area: "3.9 × 4.15 m · built-in U-desk · door to the terrace", level: 1,
+      id: "loft", name: "Loft", area: "3.7 × 4.2 m inside · built-in U-desk · door to the terrace", level: 1,
       photos: ["photos/video-loft.jpg", "listing/13442259.jpg"],
       gem: "The built-in U-desk takes three walls, which makes this a real office for two, with a door straight out to the terrace.",
       ideas: [
@@ -468,7 +500,7 @@ window.HOUSE = {
         "<b>Swap the aluminium venetian for a linen roller blind</b>, and put plants and books on the existing shelves.",
         "When you have extra guests, the clear floor (about 2.7 × 1.8 m inside the U) fits an inflatable mattress.",
       ],
-      fit: ["Route from the stair to the terrace door: 1.5 m or more (the deeper desk top stays clear of it)", "Main desk: 1.9 × 0.72 m; the screens span about 1.7 m", "Inside the U-desk: about 2.7 × 1.85 m"],
+      fit: ["Route from the stair to the terrace door: about 1.75 m (the deeper desk top stays clear of it)", "Main desk: 1.9 × 0.72 m; the screens span about 1.7 m", "Inside the U-desk: about 2.7 × 1.85 m"],
       cam: { pos: [4.4, 4.4, 7.2], look: [6.6, 3.7, 9.3] },
     },
     {
@@ -563,6 +595,16 @@ window.HOUSE = {
       pitch: "Plan C's den upstairs, with the double-height lounge as a studio office: a long oak desk with two stations (four screens and a laptop) under a 5 m lit slat wall, a café table for two by the slider, and closed storage under the stair. With the study out of the bedrooms, the second bedroom is a real guest room again.",
       pros: ["The most impressive office possible here: double height, a 5 m slat wall, two stations, four screens and a laptop", "Two real bedrooms (C needed the guest room as an office)", "The den upstairs keeps the one couch and TV away from work", "Still somewhere to eat: a café table for two plus the breakfast bar, and the roof for dinner parties"],
       cons: ["No door: calls happen in an open room (the felt slats and rug help; use a headset)", "Your desk is the first thing guests see, so it has to stay tidy (closed storage and a one-tap 'after work' scene help)", "The TV is a floor away from the kitchen", "No big dining table downstairs"],
+    },
+    {
+      id: "g", letter: "F", name: "Big loft lounge", tag: "Plan E, with the loft re-measured and re-planned",
+      rooms: { loft: "living", lounge: "study", bedA: "bedroom", bedB: "guest", terrace: "social", balcony: "counter", bar: "stools", plant: "stair", kit: "std" },
+      replace: { entry: ALT.entryStudio, lounge: [ALT.studyLounge, ALT.studyDesk], stair: ALT.stairStudio, loft: [ALT.loftLiving, ALT.moonSeats] },
+      labels: { loft: "Loft lounge", lounge: "Studio (study)" },
+      work: "In the lounge, as in Plan E: a 2.35 m double desk on the west wall. Your station has three 27\" screens; the second has a 27\" and a laptop. An oak-slat wall rises more than 5 m behind it.",
+      pitch: "Plan E downstairs (the studio office in the double-height lounge, and two real bedrooms), with the loft redone at its real size. It's about 3.7 × 4.2 m inside, and the ceiling rises to about 3.85 m on the east wall, so it now holds a corner sofa with a chaise, a 75\" TV in a library that runs up to the rafters, a bar bay, and two moon chairs at the railing facing the north window.",
+      pros: ["The loft finally uses its height: a 3.55 m library on the tall east wall", "A proper living room: one corner sofa seats four, plus a chaise for films", "The moon chairs are the closest view of the north window in any plan", "Plan E's strengths stay: the studio office downstairs and two real bedrooms"],
+      cons: ["The library and ladder must be anchored to the party wall, and 3.55 m of shelves takes a lot of books to fill", "As in Plan E: calls happen in an open room downstairs, and the TV is a floor away from the kitchen", "The route to the roof is 90 cm between the chairs and the sofa: comfortable, but not generous", "No big dining table downstairs (dinner parties go up to the roof)"],
     },
   ],
 };

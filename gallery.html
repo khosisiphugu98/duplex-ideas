@@ -49,6 +49,7 @@
     .extra figcaption { position: absolute; left: 10px; top: 10px; background: rgba(38,34,30,.75); color: #fff; font-size: 11.5px; padding: 3px 10px; border-radius: 999px; }
     footer { max-width: 1180px; margin: 48px auto; padding: 0 24px; color: var(--ink-2); font-size: 13px; }
     @media (max-width: 720px) { h1 { font-size: 34px; } }
+      .drawing { margin: 14px 0; max-width: 620px; } .drawing img { width: 100%; border-radius: 10px; border: 1px solid rgba(0,0,0,.12); } .drawing figcaption { font-size: 12px; color: #6b6259; margin-top: 4px; }
   </style>
 </head>
 <body>
@@ -101,6 +102,7 @@
             <span class="lab l">Today · 360° photo</span><span class="lab r">${tagName} · 3D, same spot</span>
           </div>
           <p class="gem">${s.gem}</p>
+          ${s.drawing ? `<figure class="drawing"><img src="${s.drawing}" alt="${s.name}, drawn to scale" loading="lazy"><figcaption>Drawn to scale, from above</figcaption></figure>` : ""}
           <ol>${s.ideas.map((i) => `<li>${i}</li>`).join("")}</ol>
           ${s.fit ? `<p class="fit"><b>Measured:</b> ${s.fit.join(" · ")}</p>` : ""}
         </section>`).join("");

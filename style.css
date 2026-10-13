@@ -161,7 +161,7 @@ body.shot #loadBadge { display: none !important; }
 
 /* plans: whole-home ideas to flip between */
 #plans { margin: 4px 0 12px; }
-#planBar { display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; padding: 3px; background: var(--paper-2); border-radius: 12px; }
+#planBar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; padding: 3px; background: var(--paper-2); border-radius: 12px; }
 #planBar button { border: 0; background: transparent; border-radius: 9px; padding: 6px 4px 7px; display: grid; justify-items: center; gap: 1px; line-height: 1.15; color: var(--ink-2); }
 #planBar button b { font: 560 17px/1 var(--serif); color: var(--ink); }
 #planBar button span { font-size: 11px; font-weight: 500; text-align: center; }
