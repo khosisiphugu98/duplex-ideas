@@ -76,7 +76,7 @@
     const D = window.HOUSE;
     const stopsFor = (p) => D.stops.flatMap((s) => { const r = p.replace?.[s.id]; return r ? [r].flat().map((x) => ({ ...x, changed: true })) : [s]; });
     const nav = document.querySelector("#plans .in"), list = document.getElementById("list");
-    // plans A–D, plus your mix (and any mixes you saved in the walkthrough)
+    // plans A–G, plus your mix (and any mixes you saved in the walkthrough)
     let saved = []; try { saved = JSON.parse(localStorage.getItem("mixes") || "[]"); } catch {}
     nav.innerHTML = D.plans.map((p) => `<button data-plan="${p.id}"><b>${p.letter}</b>${p.name}</button>`).join("")
       + `<button data-plan="mix" data-code="${D.mixEncode(D.mixChoice)}"><b>✦</b>Your mix</button>`
@@ -90,7 +90,7 @@
       const tagName = plan.mix ? (btn?.dataset.name || "Your mix") : `Plan ${plan.letter}`;
       nav.querySelectorAll("button").forEach((b) => b.classList.toggle("on", plan.mix ? b.dataset.code === code && (!btn || b === btn) : b.dataset.plan === plan.id));
       document.getElementById("pitch").innerHTML = plan.mix
-        ? `<b>✦ ${tagName} · pieces from plans A–D</b>${plan.pitch} <a href="index.html?plan=mix&mix=${code}">Change it in the walkthrough →</a><br>${plan.checks.filter((x) => x[0] !== "good").map((x) => `<span class="chk ${x[0]}">${x[0] === "bad" ? "✕" : "!"} ${x[1]}</span>`).join(" ")}`
+        ? `<b>✦ ${tagName} · pieces from plans A–G</b>${plan.pitch} <a href="index.html?plan=mix&mix=${code}">Change it in the walkthrough →</a><br>${plan.checks.filter((x) => x[0] !== "good").map((x) => `<span class="chk ${x[0]}">${x[0] === "bad" ? "✕" : "!"} ${x[1]}</span>`).join(" ")}`
         : `<b>Plan ${plan.letter} · ${plan.tag}</b>${plan.pitch}<br><b style="margin-top:8px">Workspace</b>${plan.work}`;
       list.innerHTML = stopsFor(plan).filter((s) => D.panoFor[s.id]).map((s) => `
         <section>
@@ -102,7 +102,7 @@
             <span class="lab l">Today · 360° photo</span><span class="lab r">${tagName} · 3D, same spot</span>
           </div>
           <p class="gem">${s.gem}</p>
-          ${s.drawing ? `<figure class="drawing"><img src="${s.drawing}" alt="${s.name}, drawn to scale" loading="lazy"><figcaption>Drawn to scale, from above</figcaption></figure>` : ""}
+          ${s.drawing ? `<figure class="drawing"><img src="${s.drawing}" alt="${s.name}${s.drawingCap ? "" : ", drawn to scale"}" loading="lazy"><figcaption>${s.drawingCap || "Drawn to scale, from above"}</figcaption></figure>` : ""}
           <ol>${s.ideas.map((i) => `<li>${i}</li>`).join("")}</ol>
           ${s.fit ? `<p class="fit"><b>Measured:</b> ${s.fit.join(" · ")}</p>` : ""}
         </section>`).join("");
